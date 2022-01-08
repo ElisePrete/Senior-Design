@@ -3,17 +3,29 @@ from flask_pymongo import PyMongo,  ObjectId; #to create unique id's for each do
 from flask_cors import CORS; #allows browser to interact with db
 
 app = Flask(__name__)
-app.config['MONGO_URI']=  'mongodb+srv://lizz:datadatadata@cluster0.wq4xj.mongodb.net/test' #dfind = db name
+app.config['MONGO_URI']=  'mongodb+srv://lizz:datadatadata@cluster0.wq4xj.mongodb.net/dFind' #dfind = db name
 mongo = PyMongo(app)
-
-CORS(app)
-
 db = mongo.db.docs #docs= collection name
-''' #this is how routes are defined within flask. results of the function below route will result within that route
+
+
+
+def getDB(username):
+    app = Flask(__name__)
+    if username == 'lizz':
+        app.config['MONGO_URI']=  'mongodb+srv://lizz:datadatadata@cluster0.wq4xj.mongodb.net/dFind' 
+    elif username == 'elise':
+        app.config['MONGO_URI']=  'mongodb+srv://elise:pleasework123@cluster0.wq4xj.mongodb.net/dFind'
+    mongo = PyMongo(app)
+    CORS(app)
+    return mongo.db
+        
+
+''' #this == how routes are defined within flask. results of the function below route will result within that route
 @app.route("/")
 def index():
     return '<h1 style="color:red">D.Find!</h1>'
 '''
+
 @app.route("/docs",methods=["POST"])
 def createDoc():
     id = db.insert({ #temp doc object with single keyword and text

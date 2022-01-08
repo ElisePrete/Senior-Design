@@ -13,8 +13,6 @@ function Crud() {
             <h1 style={{ color: "white" }}> D.Find </h1>
         </Navbar><Container>
                 <Row>
-                    <Col nd={4}>Summaries
-                    </Col>
                     <Col nd={8}>
                         <Table bordered hover>
                             <thead>
