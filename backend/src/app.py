@@ -2,30 +2,40 @@ from flask import Flask, request, jsonify #all needed for json response for reac
 from flask_pymongo import PyMongo,  ObjectId; #to create unique id's for each doc
 from flask_cors import CORS; #allows browser to interact with db
 
+
+#just type ur username and password in the params below so that github doesn't scream at us
+username = "lizz"
+password = "datadatadata"
+
 app = Flask(__name__)
-app.config['MONGO_URI']=  'mongodb+srv://lizz:datadatadata@cluster0.wq4xj.mongodb.net/dFind' #dfind = db name
+app.config['MONGO_URI']=  f'mongodb+srv://{username}:{password}@cluster0.wq4xj.mongodb.net/dFind' #dfind = db name
 mongo = PyMongo(app)
-db = mongo.db.docs #docs= collection name
+CORS(app)
+db = mongo.db 
 
-
-
-def getDB(username):
-    app = Flask(__name__)
-    if username == 'lizz':
-        app.config['MONGO_URI']=  'mongodb+srv://lizz:datadatadata@cluster0.wq4xj.mongodb.net/dFind' 
-    elif username == 'elise':
-        app.config['MONGO_URI']=  'mongodb+srv://elise:pleasework123@cluster0.wq4xj.mongodb.net/dFind'
-    mongo = PyMongo(app)
-    CORS(app)
-    return mongo.db
-        
-
-''' #this == how routes are defined within flask. results of the function below route will result within that route
 @app.route("/")
 def index():
     return '<h1 style="color:red">D.Find!</h1>'
-'''
 
+@app.route("/Questions",methods=["GET"])
+def getDocs():
+    docs = []
+    for doc in db.Questions.find():
+        print("doc:" + doc['answer'])
+        docs.append({
+            '_id':str(ObjectId(doc['_id'])),
+            'question': doc['question'],
+            'link':doc['link'],
+            'answer':doc['answer']
+        })
+    return jsonify(docs)
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+
+'''
+#NOTE: ALL FUNCTIONS BELOW WERE MADE FOR DEMO (recyclable)
 @app.route("/docs",methods=["POST"])
 def createDoc():
     id = db.insert({ #temp doc object with single keyword and text
@@ -68,6 +78,4 @@ def updateDoc(id):
             'text':request.json['text']
         }})
     return jsonify({'msg':'doc updated!'})
-
-if __name__ == '__main__':
-    app.run(debug=True)
+'''
