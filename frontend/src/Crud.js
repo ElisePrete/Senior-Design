@@ -1,12 +1,12 @@
 import React, {useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { loadDocs } from './redux/actions';
+import { loadQuestions } from './model/actions';
 import {Navbar, Table, Container, Row, Col, Button, ButtonGroup, Form} from "react-bootstrap"
 function Crud() {
     const dispatch = useDispatch();
-    const {docs} = useSelector(state => state.data)
+    const {objs} = useSelector(state => state.data)
     useEffect(() => {
-        dispatch(loadDocs());
+        dispatch(loadQuestions());
     }, [])
     return (
         <><Navbar bg="primary" variant="light" className="justify-content-center">
@@ -18,16 +18,16 @@ function Crud() {
                             <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Keyword</th>
-                                <th>Text</th>
+                                <th>Question</th>
+                                <th>Answer</th>
                             </tr>
                             </thead>
-                            {docs && docs.map((item,index) => (
+                            {objs && objs.map((item,index) => (
                                 <tbody key={index}>
                                     <tr>
                                         <td>{index+1}</td>
-                                        <td>{item.keyword}</td>
-                                        <td>{item.text}</td>
+                                        <td>{item.question}</td>
+                                        <td>{item.answer}</td>
                                     </tr>
                                     </tbody>
                             ))}
