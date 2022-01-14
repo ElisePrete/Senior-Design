@@ -1,0 +1,794 @@
+Abscess, Brain
+Abscess, Kidney
+Abscess, Liver
+Acne
+Acromegaly
+Acute Nonlymphocytic Leukemia
+Addison's Disease
+Adenocarcinoma
+Adenomyoepithelioma
+Adhesions
+Adhesions, Stomach
+Adhesions, Pelvis
+Adhesions, Platelet
+Adhesions, Respiratory
+Aging
+Agoraphobia
+AIDS HIV
+Alcohol Abuse
+Allergic reaction (disorder)
+Amyotrophic lateral sclerosis (ALS)
+Periodontal abscess
+Amebiasis (disorder)
+Amputation
+Amputation, Above Knee
+Amputation, Arm, Forearm, Hand
+Amputation, Below Knee
+Amputation, Foot (Feet)
+Amputation, Leg
+Amputation, Multiple Fingers
+Amputation, Single Finger
+Amputation, Toe (Toes)
+Amyotrophic Lateral Sclerosis
+Anatomical Loss
+Anemia, Primary
+Aneurysm
+Aneurysm, Heart/Veins/Arteries
+Aneurysm, Neurological Other System
+Angina
+Ankle Disorder
+Ankle Sprain
+Ankle Strain
+Anxiety Disorder
+Arm Disorder, Heart/Veins/Arteries
+Arm Disorder, Neurological Other System
+Arm Disorder
+Arrhythmia
+Arteriosclerosis
+Arteriosclerosis Obliterans
+Arteriosclerotic Heart Disease
+Arthritis
+Arthritis, Degenerative
+Arthritis, Due To Trauma
+Asbestosis (Asbestos Disease)
+Arteriosclerotic Heart Disease (ASHD)
+Asthma
+Atherosclerosis
+Atherosclerotic Peripheral Vascular Disease
+Athlete's Foot
+Atrophy, Progressive Muscular
+Avitaminosis
+Back Disorder
+Back Injury
+Back Sprain
+Back Strain
+Basaloma
+Bell's Palsy
+Beriberi (Including Beriberi Heart Disease)
+Bipolar Disorder
+Birth Defect In Child
+Blackwater Fever
+Bladder Disorder
+Bladder Stone
+Blindness (Including Light Perception Only)
+Blood Clot
+Boeck's Disease
+Bone Atrophy
+Bone Disorder
+Bone Fracture
+Bowel Disorder
+Brain Hemorrhage
+Brain Thrombosis
+Brain Tumor
+Breast Disorder
+Bronchiectasis
+Bronchitis
+Bruise
+Buerger's Disease
+Bulbar Palsy
+Burn
+Bursitis
+Coronary Artery Disease (CAD)
+Caisson
+Caisson Disease
+Calculus, Bladder
+Calculus, Gallbladder
+Calculus, Kidney
+Cancer
+Cancer, Bile Ducts
+Cancer, Bone
+Cancer, Brain
+Cancer, Breast
+Cancer, Bronchus
+Cancer, Cheek
+Cancer, Colon
+Cancer, Dental And Oral
+Cancer, Digestive
+Cancer, Ear Disease And Other Sense Organs
+Cancer, Endocrine
+Cancer, Esophagus
+Cancer, Eye (Vision)
+Cancer, Gall Bladder
+Cancer, Gastrointestinal Tract
+Cancer, Genitourinary
+Cancer, Gum
+Cancer, Gynecological
+Cancer, Heart/Veins/Arteries
+Cancer, Hemic And Lymphatic
+Cancer, Kidney
+Cancer, Larynx
+Cancer, Lip
+Cancer, Liver
+Cancer, Lung
+Cancer, Lymph Nodes
+Cancer, Musculoskeletal, Ankle
+Cancer, Musculoskeletal, Elbow
+Cancer, Musculoskeletal, Foot
+Cancer, Musculoskeletal, Hand
+Cancer, Musculoskeletal, Hip
+Cancer, Musculoskeletal, Knee
+Cancer, Musculoskeletal, Mid/Lower Back (Thoracolumbar Spine)
+Cancer, Musculoskeletal, Neck/Upper Back (Cervical Spine)
+Cancer, Musculoskeletal, Other
+Cancer, Musculoskeletal, Shoulder
+Cancer, Musculoskeletal, Wrist
+Cancer, Musculoskeletal And Muscle Injuries
+Cancer, Nasopharyngeal
+Cancer, Neurological Other System
+Cancer, Ovarian
+Cancer, Pancreas
+Cancer, Pharyngolaryngeal
+Cancer, Pharynx
+Cancer, Prostate
+Cancer, Rectum
+Cancer, Renal Pelves
+Cancer, Respiratory
+Cancer, Salivary Gland
+Cancer, Skin
+Cancer, Small Intestine
+Cancer, Squamous Cell, Of The Skin
+Cancer, Stomach
+Cancer, Testicle
+Cancer, Thyroid
+Cancer, Tongue
+Cancer, Trachea
+Cancer, Ureters
+Cancer, Urethra
+Cancer, Urinary Bladder
+Cancer, Urinary Tract
+Cancer, Urogenital System (Except Prostate)
+Carate (Aka Pinta)
+Carcinoma
+Cardiovascular Disease
+Cardiovascular Symptoms
+Carpal Tunnel Syndrome
+Cartilage
+Cataract
+Cataracts, Posterior Subcapsular
+Catarrhal Fever (Common Cold)
+Cavity
+Central Nervous System tumor
+Cerebral Accident
+Cerebral Hemorrhage
+Cerebral Vascular Accident
+Cerebrovascular Accident
+Cerebrovascular Hemorrhage
+Cervical Sprain
+Cervical Strain
+Cervicitis
+Chest Pain
+Congestive Heart Failure (CHF)
+Chloracne Or Other Acneform Disease Consistent W/ Chloracne
+Chloroma
+Cholangiocarcinoma
+Cholangioma
+Cholangitis
+Cholecystitis
+Cholera
+Choriocarcinoma
+Choroiditis
+Chronic Fatigue Syndrome
+Chronic Lymphocytic Leukemia
+Chronic Obstructive Pulmonary Disease
+Chronic Organic Brain Syndrome
+Chronic Renal Disease
+Cirrhosis Of Liver
+Clavicle
+Clots
+Coccidiodomycosis
+Cold
+Cold Injury Residuals
+Colitis
+Colon Syndrome, Irritable
+Combat Fatigue
+Combat Neurosis
+Comedocarcinoma
+Competency
+Congestive Heart Failure
+Conjunctivitis
+Cor Pulmonale
+Corneal Opacities
+Coronary
+Coronary Accident
+Coronary Artery Bypass
+Coronary Artery Disease
+Costochondritis
+Cushing's Syndrome
+Cerebrovascular Accident (CVA)
+Cyclitis
+Cylindroma
+Cyst
+Cyst/Benign Growth, Dental And Oral
+Cyst/Benign Growth, Digestive
+Cyst/Benign Growth, Ear Disease And Other Sense Organs
+Cyst/Benign Growth, Endocrine
+Cyst/Benign Growth, Eye (Vision)
+Cyst/Benign Growth, Genitourinary
+Cyst/Benign Growth, Gynecological
+Cyst/Benign Growth, Heart/Veins/Arteries
+Cyst/Benign Growth, Hemic And Lymphatic
+Cyst/Benign Growth, Musculoskeletal, Ankle
+Cyst/Benign Growth, Musculoskeletal, Elbow
+Cyst/Benign Growth, Musculoskeletal, Foot
+Cyst/Benign Growth, Musculoskeletal, Hand
+Cyst/Benign Growth, Musculoskeletal, Hip
+Cyst/Benign Growth, Musculoskeletal, Knee
+Cyst/Benign Growth, Musculoskeletal, Mid/Lower Back (Thoracolumbar Spine)
+Cyst/Benign Growth, Musculoskeletal, Neck/Upper Back (Cervical Spine)
+Cyst/Benign Growth, Musculoskeletal, Other
+Cyst/Benign Growth, Musculoskeletal, Shoulder
+Cyst/Benign Growth, Musculoskeletal, Wrist
+Cyst/Benign Growth, Musculoskeletal And Muscle Injuries
+Cyst/Benign Growth, Neurological Other System
+Cyst/Benign Growth, Respiratory
+Cyst/Benign Growth, Skin
+Cystitis
+Deafness, Nerve
+Degenerative Arthritis
+Dehydration
+Dementia
+Dental Abscesses
+Dental and Oral
+Dental and Oral, Musculoskeletal
+Depression
+Depressive Neurosis
+Dermatitis
+Diabetes
+Diabetes Insipidus
+Diabetes Mellitus
+Diabetes Mellitus, Type 2
+Diabetes, Adult-Onset
+Diarrhea
+Digestive
+Digestive Disorder
+Disarticulation
+Discoid Lupus
+Diverticulitis
+Dizziness
+Dracontiasis
+Dracunculiasis
+Drug Abuse
+Dysentery
+Dysthymic Disorder
+Ear Disorder
+Ear Disease And Other Sense Organs
+Ear Infection
+Ears-Ringing
+Eating Disorder
+Eating Disorders
+Eczema
+Elbow Disorder
+Elbow Sprain
+Elbow Strain
+Embolism
+Embolism, Brain
+Embolism/Infarction, Heart/Veins/Arteries
+Embolism/Infarction, Neurological Other System
+Emphysema
+Encephalitis, Lethargica Residuals
+Endocarditis
+Endocrine
+Endocrinopathy
+Endometriosis
+Endothelioma
+Enucleation
+Epididymitis
+Epilepsy
+Epithelioma
+Erythematosus Lupus
+Esophageal Disorder
+Eye (Vision)
+Eye Disorder
+Eye Disease
+Facial Injury
+Fallen Arches
+Fatigue
+Feet
+Fibromyalgia
+Fibrosis
+Fibrosis, Interstitial Pulmonary
+Filariasis
+Finger
+Flatfoot
+Flu
+Flu-Like Disorders
+Foot Disorder
+Foot Pain
+Forearm Disorder
+Fracture
+Frostbite, Organic Residuals Of
+Frozen Feet
+Fungal Disorder
+Gall Bladder Disorder
+Gallstone
+Gangrene
+Gastritis
+Gastroenteritis
+Gastrointestinal Problems
+Gastrointestinal Symptoms
+Generalized Arteriosclerosis
+Genitourinary
+Genitourinary Disorder
+Gastroesophageal Reflux Disease (GERD)
+Gingivitis
+Glaucoma
+Glomerulonephritis
+Gout
+Grand Mal Epilepsy
+Groin Disorder
+Gulf War Undiagnosed Illness
+Gulf War Unexplained Chronic Multi-Symptom Illness
+Gulf War Veteran With Diagnosed Illness As Qualifying Chronic Disability
+Gulf War Veteran With Undiagnosed Illness
+Gulf War Veteran With Unexplained Chronic Multi-Symptom Illness
+Gum Disease
+Gums, Sore
+Gynecological
+Gynecological Disorder
+Hair Loss
+Hand Disorder
+Hansen's Disease
+Head Injury
+Headaches
+Hearing Loss
+Hearing Loss, Sensorineural
+Heart Attack
+Heart Disorder
+Heart Disease
+Heart Failure
+Heart/Veins/Arteries
+Heat Stroke
+Helminthiasis
+Helpless Child
+Hematuria
+Hemic And Lymphatic
+Hemic-Lymphatic Disorder
+Hemorrhage
+Hemorrhage, Eye (Vision)
+Hemorrhage, Neurological Other System
+Hemorrhagic Purpura Idiopathic
+Hemorrhoids
+Hepatitis
+Hepatitis B
+Hepatitis C
+Hepatocarcinoma
+Hepatoma
+Hernia Disorder
+Hernia, Femoral
+Hernia, Hiatal
+Hernia, Inguinal
+Hernia, Ventral
+Herpes
+Herpes, Eye (Vision)
+Herpes, Skin
+High Blood Pressure
+Hip Disorder
+Hip Replacement
+HIV
+Hodgkin's Disease
+Human Immunodeficiency Virus
+Hypercholesterolemia
+Hyperlipidemia
+Hypertension
+Hyperthyroidism
+Hypothyroidism
+Hypovitaminosis
+Hysterectomy
+Immune Disorder
+Infarction
+Infection
+Infectious Diseases, Immune Disorders & Nutritional Deficiencies
+Intestinal Disorder
+Involutional Changes
+Iritis
+Irritable Bowel Syndrome
+Irritable Colon
+Jaw Disorder
+Joint Disease
+Joint Pains
+Kala-Azar
+Keratitis
+Kidney Disease
+Kidney Failure
+Kidney Stone
+Kidney Transplant
+Kidney, Removal Of
+Knee Disorder
+Knee Replacement
+Knee Sprain
+Knee Strain
+Labyrinthitis
+Laryngectomy
+Laryngitis
+Larynx Disorder
+Leg Disorder, Heart/Veins/Arteries
+Leg Disorder, Neurological Other System
+Leg Disorder
+Leishmaniasis
+Leprosy
+Leukemia
+Leukosarcoma
+Liver Disorder
+Loiasis
+Loose Teeth
+Loss Of Use
+Lou Gehrig's Disease
+Low Back Disorder
+Low Back Sprain
+Low Back Strain
+Lumbar Sprain
+Lumbar Strain
+Lung Disorder
+Lupus
+Lupus, Discoid
+Lupus, Erythematosus
+Lupus, Systemic
+Lyme Disease
+Lymphogranulomatosis
+Lymphoma, Except Hodgkin's Disease
+Lymphomas
+Lymphosarcoma
+Major Depression
+Malaria
+Malignancy
+Malignant Leiomyblastoma
+Malignant Neoplasm
+Malignant Tumor
+Malnutrition
+Manic-Depressive Reaction
+Mastoiditis
+Melanocarcinoma
+Melanoepithelioma
+Melanoma
+Melanoma, Malignant
+Melanosarcoma
+Melanoscirrhus
+Memory Loss
+Meniere's Disease
+Menstrual Disorders
+Mental Disease
+Mental Disorder
+Mental Disorders
+Mesenchymoma
+Mesonephroma
+Mesotheliomas Of Peritoneum
+Mesotheliomas Of Pleura
+Metritis
+Migraine
+Miscellaneous
+Morton's Disease
+Mouth Disorder
+Multiple Sclerosis
+Muscle Atrophy
+Muscle Disorder
+Muscle Injury
+Muscle Pain
+Musculoskeletal, Amputations
+Musculoskeletal, Ankle
+Musculoskeletal, Arthritis
+Musculoskeletal, Bones
+Musculoskeletal, Elbow
+Musculoskeletal, Foot
+Musculoskeletal, Hand
+Musculoskeletal, Hip
+Musculoskeletal, Knee
+Musculoskeletal, Mid/Lower Back (Thoracolumbar Spine)
+Musculoskeletal, Neck/Upper Back (Cervical Spine)
+Musculoskeletal, Osteomyelitis
+Musculoskeletal, Other
+Musculoskeletal, Shoulder
+Musculoskeletal, Toe Amputations
+Musculoskeletal, Wrist
+Musculoskeletal and Muscle Injuries
+Musculoskeletal Disorder
+Myasthenia Gravis
+Mycosis Fungoides
+Myelitis (A Spinal Cord Disorder)
+Myeloma
+Myeloma, Multiple
+Myocardial Infarction (Mi)
+Myocarditis
+Myositis
+Myxosarcoma
+Nausea
+Neck Disorder
+Neck Sprain
+Neck Strain
+Neoplasm, Benign
+Neoplasm, Malignant
+Nephritis
+Nerve Damage
+Nerve Deafness
+Nerves
+Nervous System Disease
+Nervousness
+Neuralgia
+Neuritis
+Neurologic Symptoms
+Neurological, Cranial/Peripheral Nerves
+Neurological Disorder
+Neurological Other System
+Neuropathy, Peripheral
+Neuropsychological Symptoms
+New Growths, Malignant
+Niacin Deficiency
+Non-Hodgkin's Lymphoma (Nhl)
+Digestive system symptoms
+Ear Disorder
+Genitourinary system symptoms
+Gynecological system symptoms
+Nervous system symptoms
+Neurological system symptoms
+Orthopedic Claims
+Respiratory Disorder
+Nose Disorder
+Nutritional Deficiency
+Organic Brain Syndrome (OBS)
+Onchocerciasis
+Oophoritis
+Optic Atrophy Associated with Malnutrition
+Organic Brain Syndrome
+Organic Diseases of The Nervous System
+Organic Heart Disease
+Oroya Fever
+Orthopedic Disorder
+Osgood Schlatter Disease
+Osteitis Deformans (Paget's Disease)
+Osteoarthritis, Post-Traumatic
+Osteomalacia
+Otitis Externa
+Otitis Media
+Otosclerosis
+Ovarian Disorder, Bilateral
+Ovary (Disease, Injury, Or Adhesions Of)
+Ovary (Removal Of)
+Painful Joints
+Palsy
+Palsy, Bulbar
+Pancreatitis
+Paralysis
+Paralysis Agitans
+Paralysis, Nerve
+Paranoid Reaction
+Parasites
+Parathyroid Adenoma
+Parenchymal Lung Disease
+Parkinson's Disease
+Pellagra
+Penile Disorder
+Pension
+Pension, Aid And Attendance/Housebound
+Peptic Ulcer Disease
+Pericarditis
+Periodontal Disease (Pyorrhea)
+Periostitis
+Peripheral Neuropathy
+Peripheral Neuropathy, Acute And Subacute
+Peripheral Vascular Disease
+Peritonitis
+Personality Disorder
+Petit Mal Epilepsy
+Pharyngeal Disorder
+Phlebitis
+Phobias
+Pinta
+Plague
+Plantar Fasciitis
+Pleural Effusions
+Pleural Plaques
+Pleurisy
+Pneumocystis Carini Pneumonia
+Pneumonia
+Polymyositis
+Porphyria Cutanea Tarda (Pct) (A Skin Disorder)
+Post Traumatic Stress Disorder (PTSD) Combat, Mental Disorders
+Post Traumatic Stress Disorder (PTSD) Personal Trauma, Mental Disorders
+Posterior Subcapsular Cataracts
+Pregnancy, Surgical Complications Of
+Primary Anemia
+Progressive Muscular Atrophy
+Prostate Gland (Injuries, Infections, Hypertrophy)
+Psoriasis
+Psychomotor Epilepsy
+Psychophysiological Disorder
+Psychoses
+Psychosis
+Psychotic Depressive Reaction
+Psychotic Reaction
+Post Traumatic Stress Disorder (PTSD)
+PTSD Personal Trauma
+Purpura Idiopathic, Hemorrhagic
+Raynaud's Disease
+Rectal Bleeding
+Removal Of Kidneys
+Renal Disease
+Renal Failure
+Respiratory
+Respiratory system symptoms
+Reticulum Cell Sarcoma
+Retina (Detachment Of)
+Retina (Scars, Atrophy, Or Irregularities Of)
+Retinitis
+Rheumatic Fever
+Rheumatic Heart Disease
+Rheumatism
+Rhinitis
+Rib
+Ringing In Ears
+Saliva, Thickened
+Salpingitis
+Sarcoidosis
+Sarcoma
+Sarcoma, Reticulum Cell
+Sarcoma, Soft-Tissue
+Adult Fibrosarcoma
+Alveolar Soft Part Sarcoma
+Angiosarcoma
+Chondrosarcoma
+Clear Cell, Of Tendons &Amp; Aponeuroses
+Congenital Fibrosarcoma
+Dermatofibrosarcoma Protuberans
+Ectomesenchymoma
+Epithelioid Leiomyosarcoma
+Epithelioid Sarcoma
+Extraskeletal Ewing's Sarcoma
+Fibrosarcoma
+Hemangiosarcoma
+Infantile Fibrosarcoma
+Kaposi's Sarcoma
+Leiomyosarcoma
+Liposarcoma
+Lymphangiosarcoma
+Malignant Fibrous Histiocytoma
+Malignant Ganglioneuroma
+Malignant Glomus Tumor
+Malignant Granular Cell Tumor
+Malignant Hemangiopericytoma
+Malignant Leiomyoblastoma
+Malignant Mesenchymoma
+Malignant Schwannoma
+Malignant Triton Tumor
+Mesothelioma
+Osteosarcoma
+Proliferating Angioendotheliomatosis
+Rhabdomyosarcoma
+Synovial Sarcoma
+Synovioma, Malignant
+Sarcoma, Soft-Tissue-Malignant Giant Cell Tumor/Tendon Sheath
+Scapula
+Scar Formation
+Scar
+Scar, Burns
+Scars (Extremities And Trunk)
+Scars (Head, Face, Or Neck)
+Schistosomiasis
+Schizophrenia
+Schwannoma, Epitheloid, Malignant
+Schwannoma, Glandular, Malignant
+Schwannoma, Malignant with Rhabdomyoblastic Differentiation
+Scleritis
+Scleroderma
+Sebaceous Cyst
+Seizure Disorder
+Seminoma
+Service-Connected Death
+Shell Shock
+Shin Splints
+Shortness Of Breath
+Shoulder Disorder
+Shoulder Replacement
+Shoulder Sprain
+Shoulder Strain
+Sickle Cell Anemia
+Symptoms Cardiovascular System
+Symptoms Digestive System
+Symptoms Nervous System
+Symptoms Respiratory System
+Symptoms Skin
+Sinus Disorder
+Sinusitis
+Skin
+Skin Disorder
+Sleep Apnea
+Sleep Disturbances
+Smell, Loss Of Sense Of
+Special Monthly Compensation, Aid and Attendence/Housebound
+Special Monthly Compensation, Anatomical Loss/Loss Of Use
+Spina Bifida
+Spine
+Spleen Disorder
+Sprains
+Sternberg's Sarcoma
+Stomach Disorder
+Stone
+Strains
+Strep Throat
+Stress
+Stress Disorder
+Stroke
+Stump
+Surgery, Residuals
+Synoviosarcoma
+Synovitis
+Syphilis
+Syringomyelia
+Systemic Lupus
+Taste, Loss Of Sense Of
+Tendinitis
+Tendonitis
+Tenosynovitis
+Testicular Disorder
+Thiamine Deficiency
+Thigh Disorder
+Thoracic Sprain
+Thoracic Strain
+Throat Disorder
+Thromboangiitis, Obliterans (Buerger's Disease)
+Thrombocytopenia
+Thrombocytopenic Purpura
+Thrombosis, Brain
+Thumb
+Thyroid Disorder
+Thyroid Nodular Disease, Non-Malignant
+Tinea Pedis
+Tinnitus
+Toe
+Tongue Disorder
+Tooth Disorder
+Traumatic Brain Injury
+Tuberculosis
+Tumor, Malignant Glomus
+Tumor, Malignant Granular Cell
+tumor, Brain
+tumor, Central Nervous System
+tumor, Malignant
+tumor, Peripheral Nerves
+tumor, Spinal Cord
+Ulcer Disorder
+Uterus (Disease, Injury, Or Adhesions Of)
+Uterus (Displacement Of)
+Uterus (Prolapse)
+Uterus (Removal Of)
+Uveitis
+Vaginal Disorder
+Vaginitis
+Valvular Heart Disease
+Varicose Veins
+Vasectomy
+Vincent's Stomatitis
+Vision
+Visually Impaired
+Vitamin Deficiency
+Voice Loss
+Vulvovaginitis
+War Neurosis
+Wasting Syndrome
+Worms
+Wound, Bullet
+Wound, Bullet/Shell Fragment
+Wound, Shell Fragment
+Wrist Disorder
+Wrist Sprain
+Wrist Strain
+Yaws
+Yellow Fever
