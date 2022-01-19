@@ -9,7 +9,8 @@ import app
 def spellchecked(text):
     return TextBlob(text).correct()
 
-#gathers terms from snomedct's core dictionary + funnels into our tag collection
+#gathers terms from snomedct's core dictionary + funnels into our tag collection\
+#eventually search with: {tags: {$regex:'ptsd*', '$options' : 'i'}}
 def getTags(synColl):
     #medfile used for testing
     #medfile = io.open("medfile.txt", 'w', encoding='utf8')

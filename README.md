@@ -12,10 +12,13 @@ setting up virtual environment:
     pip install flask Flask-PyMongo flask-cors
 
 setting up frontend:
-    1) npm install --save react-bootstrap bootstrap@5.1.3 xios redux react-redux redux-logger redux-thunk react-toastify
+    1) npm install --save react-bootstrap bootstrap@5.1.3 axios redux react-redux redux-logger redux-thunk react-toastify
 
 run frontend:
+    go to frontend folder
     npm start
+
+
 bugs:
     1) if flask modules are unresolved imports in vscode:
     ctrl+shift+p
@@ -28,4 +31,6 @@ bugs:
 
     ____________
 running backend:
+    go to backend folder
+    source venv/bin/activate 
     python3 src/app.py
