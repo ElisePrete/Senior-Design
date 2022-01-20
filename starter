@@ -1,0 +1,2 @@
+# '-' for the log files means stdout for --access-logfile and stderr for --error-logfile.
+gunicorn --bind=0.0.0.0 --timeout 600 --workers=4 --chdir backend app:app --access-logfile '-' --error-logfile '-'
