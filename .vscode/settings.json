@@ -3,6 +3,6 @@
         "node_modules{,/**}",
         ".vscode{,/**}"
     ],
-    "appService.deploySubpath": "..",
+    "appService.deploySubpath": ".",
     "appService.defaultWebAppToDeploy": "/subscriptions/6eebf2aa-a530-43c5-a0c3-0f5ee30c5acf/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/dfind"
 }

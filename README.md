@@ -34,3 +34,7 @@ running backend:
     go to backend folder
     source venv/bin/activate 
     python3 src/app.py
+
+**new run commands**
+in /frontend: yarn start 
+in a new terminal in /frontend: yarn start-api

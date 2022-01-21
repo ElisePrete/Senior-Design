@@ -11,17 +11,18 @@ const getObjs = (objs) => (
     payload:objs
 });
 
-export const loadDocuments = () => {
+
+export const loadQuestions = () => {
     return function(dispatch) {
-        axios.get(`${API}/Documents`)
+        axios.get(`${API}/api/Questions`)
         .then((resp) =>  dispatch(getObjs(resp.data)) )
         .catch((err) => console.log("error:", err))
      }
 }
-
-export const loadQuestions = () => {
+/*
+export const loadDocuments = () => {
     return function(dispatch) {
-        axios.get(`${API}/Questions`)
+        axios.get(`${API}/api/Documents`)
         .then((resp) =>  dispatch(getObjs(resp.data)) )
         .catch((err) => console.log("error:", err))
      }
@@ -30,9 +31,10 @@ export const loadQuestions = () => {
 
 export const loadSummaries = () => {
     return function(dispatch) {
-        axios.get(`${API}/Summaries`)
+        axios.get(`${API}/api/Summaries`)
         .then((resp) =>  dispatch(getObjs(resp.data)) )
         .catch((err) => console.log("error:", err))
      }
-}
+}*/
+
 //NOTE: above functions were used for demo (recyclable)

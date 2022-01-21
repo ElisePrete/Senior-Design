@@ -7,7 +7,7 @@ from flask_cors import CORS; #allows browser to interact with db
 username = "lizz"
 password = "datadatadata"
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='../../frontend/build', static_url_path='/')
 app.config['MONGO_URI']=  f'mongodb+srv://{username}:{password}@cluster0.wq4xj.mongodb.net/dFind' #dfind = db name
 mongo = PyMongo(app)
 CORS(app)
@@ -15,9 +15,9 @@ db = mongo.db
 
 @app.route("/")
 def index():
-    return '<h1 style="color:red">D.Find!</h1>'
+    return app.send_static_file('index.html')
 
-@app.route("/Questions",methods=["GET"])
+@app.route("/api/Questions",methods=["GET"])
 def getDocs():
     docs = []
     for doc in db.Questions.find():
