@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/6eebf2aa-a530-43c5-a0c3-0f5ee30c5acf/resourceGroups/EHorishny1_rg_8880/providers/Microsoft.Web/sites/dfind",
+    "appService.deploySubpath": "."
+}
