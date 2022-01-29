@@ -1,29 +1,28 @@
-VIDEO USED: https://www.youtube.com/watch?v=rOAsArrX8n4
-________
-setting up virtual environment:
-    cd ~/path/backend
+RESOURCES USED:
+- https://www.youtube.com/watch?v=rOAsArrX8n4
+- https://medium.com/@shefaliaj7/hosting-react-flask-mongodb-web-application-on-aws-part-1-introduction-f49b1be79f48
 
-    pip install virtualenv
-    virtualenv venv
-    source venv/bin/activate (use command 'deactivate' to deactivate)
-    pip install flask
-    pip install flask Flask-PyMongo flask-cors
+-------------------
+-------------------
+How to run locally:
 
-setting up frontend:
-    1) npm install --save react-bootstrap bootstrap@5.1.3 xios redux react-redux redux-logger redux-thunk react-toastify
+-------------------
+How to deploy code changes:
 
-run frontend:
-    npm start
-bugs:
-    1) if flask modules are unresolved imports in vscode:
-    ctrl+shift+p
-    >python:select interpreter
+1. from your local machine ssh into aws ubuntu server:
 
-    select the version of python that is being used when pip install is called (look at install paths in terminal)
-    
-    2) if application crashes you might get a gnarly 'OSError: [Errno 98] Address already in use' error
-    run: 'kill -9 $(ps -A | grep python | awk '{print $1}')' in terminal
+ssh -i [key-file].pem ubuntu@18.205.252.35
 
-    ____________
-running backend:
-    python3 src/app.py
+2. inside of the remote server‚ make code changes in repo 'Senior Design'. 
+This could be easily done by copying 'frontend' with scp. (scp -r /frontend ubunutu@18.205.252.35)
+
+Then in Senior-Design/frontend run:
+
+-sudo npm run build
+-sudo systemctl restart dfind
+
+check http://18.205.252.35
+
+if remote doesn't display what you expect‚ panic.
+-------------------
+
