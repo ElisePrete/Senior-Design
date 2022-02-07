@@ -7,33 +7,15 @@ from flask_cors import CORS; #allows browser to interact with db
 username = ""
 password = ""
 
-app = Flask(__name__,  static_folder='../../frontend/build', static_url_path='/')
-app.config['MONGO_URI']= f'mongodb://{username}:{password}@34.230.218.59/dFind'
-#cluster0.wq4xj.mongodb.net/dFind (old db)
-        
+app = Flask(__name__, static_folder='../../frontend/build', static_url_path='/')
+app.config['MONGO_URI']=  f'mongodb+srv://{username}:{password}@cluster0.wq4xj.mongodb.net/dFind' #dfind = db name
 mongo = PyMongo(app)
 CORS(app)
 db = mongo.db 
 
-
-
 @app.route("/")
 def index():
     return app.send_static_file('index.html')
-
-@app.route("/api/question",methods=["GET"])
-def getTest():
-    docs = []
-    for doc in db.Questions.find():
-        print("doc:" + doc['answer'])
-        docs.append({
-            '_id':str(ObjectId(doc['_id'])),
-            'question': doc['question'],
-            'link':doc['link'],
-            'answer':doc['answer']
-        })
-        return jsonify(docs)
-
 
 @app.route("/api/Questions",methods=["GET"])
 def getDocs():
@@ -48,17 +30,8 @@ def getDocs():
         })
     return jsonify(docs)
 
-'''@app.route("/api/help",methods=["GET"])
-def getHelp():
-    return "hi u win"`
-'''
-
-
 if __name__ == '__main__':
-   # print("running!1!!!")
-    app.run()
-    #(host='0.0.0.0',port='5000')
-
+    app.run(debug=True)
 
 
 '''
