@@ -15,7 +15,6 @@ app.config['MONGO_URI']= f'mongodb://{username}:{password}@34.230.218.59/dFind'
 #app.config['MONGODB_HOST'] = '34.230.218.59'
 #app.config['MONGODB_PORT'] = '27017'
         
-#cluster0.wq4xj.mongodb.net/dFind' #dfind = db name
 mongo = PyMongo(app)
 CORS(app)
 db = mongo.db 
