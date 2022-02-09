@@ -19,6 +19,13 @@ export const loadQuestions = () => {
         .catch((err) => console.log("error:", err))
      }
 }
+export const loadQuestion = () => {
+    return function(dispatch) {
+        axios.get(`/api/Question`)
+        .then((resp) =>  dispatch(getObjs(resp.data)) )
+        .catch((err) => console.log("error:", err))
+     }
+}
 /*
 export const loadDocuments = () => {
     return function(dispatch) {

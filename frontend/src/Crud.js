@@ -1,12 +1,12 @@
 import React, {useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { loadQuestions } from './model/actions';
+import { loadQuestion } from './model/actions';
 import {Navbar, Table, Container, Row, Col, Button, ButtonGroup, Form} from "react-bootstrap"
 function Crud() {
     const dispatch = useDispatch();
     const {objs} = useSelector(state => state.data)
     useEffect(() => {
-        dispatch(loadQuestions());
+        dispatch(loadQuestion());
     }, [])
     return (
         <><Navbar bg="primary" variant="light" className="justify-content-center">
