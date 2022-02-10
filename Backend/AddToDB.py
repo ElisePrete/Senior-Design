@@ -9,7 +9,8 @@ import glob
 
 #https://medium.com/@iqbalhonnur/configuring-and-connecting-to-remote-mongodb-from-python-59572916afcd3
 #https://stackoverflow.com/questions/42718547/how-to-connect-remote-mongodb-with-pymongo
-client = MongoClient("mongodb+srv://elise:pleasework123@cluster0.wq4xj.mongodb.net/test?authSource=admin&replicaSet=atlas-wfntt2-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true")
+# change username and password
+client = MongoClient("mongodb+srv://{username}:{password}@cluster0.wq4xj.mongodb.net/test?authSource=admin&replicaSet=atlas-wfntt2-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true")
 #newClient = MongoClient("mongodb://elise:pleasework123@ipaddress:8000") 
 database = client.dFind         # name of the DB after '.'
 collection = database.Documents # name of the collection
