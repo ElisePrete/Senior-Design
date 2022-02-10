@@ -7,7 +7,8 @@ from pymongo import MongoClient
 import os
 import glob
 
-client = MongoClient("mongodb+srv://elise:pleasework123@cluster0.wq4xj.mongodb.net/test?authSource=admin&replicaSet=atlas-wfntt2-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true")
+# change username and password
+client = MongoClient("mongodb+srv://{username}:{password}@cluster0.wq4xj.mongodb.net/test?authSource=admin&replicaSet=atlas-wfntt2-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true")
 database = client.dFind         # name of the DB after '.'
 collection = database.Documents # name of the collection
     
