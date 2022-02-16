@@ -4,11 +4,12 @@ from flask_cors import CORS; #allows browser to interact with db
 
 
 #just type ur username and password in the params below so that github doesn't scream at us
-username = ""
-password = ""
+username = "lizz"
+password = "datadatadata"
 
 app = Flask(__name__,  static_folder='../../frontend/build', static_url_path='/')
 app.config['MONGO_URI']= f'mongodb://{username}:{password}@34.230.218.59/dFind'
+#34.230.218.59/dFind
 #cluster0.wq4xj.mongodb.net/dFind (old db)
         
 mongo = PyMongo(app)
@@ -21,25 +22,36 @@ db = mongo.db
 def index():
     return app.send_static_file('index.html')
 
-@app.route("/api/question",methods=["GET"])
-def getTest():
-    docs = []
-    for doc in db.Questions.find():
-        print("doc:" + doc['answer'])
-        docs.append({
+@app.route("/api/Question",methods=["GET"])
+def getQuestion():
+    question = str(request.args.get('input'))
+
+    ###YO ELISE !!!!
+    docs = list(db.Questions.find( { '$text': { '$search': question } } ).limit(1))
+    '''text search lets u search for n-many entries that are similar to the text
+    you provide in '$search'. i limit it to search for 1 here ^'''
+    ### LOOK HEREEEE
+
+    doc = {#default doc returned. shown if none found
+            'question': "question not found",
+            'link':"", 
+            'answer':"Please search again"
+        }
+    if (len(docs) > 0):
+        doc = docs[0] #.find $text $search returns a cursor Object Array‚ so we get first result
+        doc = {
             '_id':str(ObjectId(doc['_id'])),
             'question': doc['question'],
             'link':doc['link'],
             'answer':doc['answer']
-        })
-        return jsonify(docs)
-
+        }
+    return jsonify(doc)
 
 @app.route("/api/Questions",methods=["GET"])
 def getDocs():
     docs = []
-    for doc in db.Questions.find():
-        print("doc:" + doc['answer'])
+    for doc in db.Questions.find().limit(10):
+        #print("doc:" + doc['answer'])
         docs.append({
             '_id':str(ObjectId(doc['_id'])),
             'question': doc['question'],
@@ -48,16 +60,10 @@ def getDocs():
         })
     return jsonify(docs)
 
-'''@app.route("/api/help",methods=["GET"])
-def getHelp():
-    return "hi u win"`
-'''
 
 
 if __name__ == '__main__':
-   # print("running!1!!!")
-    app.run()
-    #(host='0.0.0.0',port='5000')
+    app.run(host='0.0.0.0',port='5000')
 
 
 

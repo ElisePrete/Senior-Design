@@ -29,8 +29,8 @@ go to 'fill in connection fields individually' and fill out like so:
 
 in the same folder as the key:
 ssh -i <db-key-file>.pem ec2-user@34.230.218.59
-within the server‚ you can connect to the db‚ in the directory /dump with:
-mongo -u <username> -p <password> 34.230.218.59/dFind
+within the server‚ you can connect to the db with:
+mongo -u <username> -p <password> dFind
 -------------------
 
 ### How to run locally:
@@ -39,12 +39,15 @@ mongo -u <username> -p <password> 34.230.218.59/dFind
 - npm run start
 in new terminal:
 - npm run start-api
+
+view on http://localhost:3000
+not localhost:5000 !!!
 -------------------
 
 ### How to deploy code changes:
 1. get the key from lizz‚ download it (there's a seperate key for the db server and the web-hosting server)
 
-2. in the folder where the key is ssh into aws ubuntu server:
+2. in the folder where thefrom your local machine ssh into aws ubuntu server:
 
 ssh -i <deploy-key-file>.pem ubuntu@18.205.252.35
 

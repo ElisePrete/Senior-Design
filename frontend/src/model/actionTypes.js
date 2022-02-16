@@ -1,5 +1,4 @@
-export const GET_OBJS = "GET_OBJS";
-export const ADD_OBJ = "ADD_OBJ";
-export const DELETE_OBJ = "DELETE_OBJ";
-export const UPDATE_OBJ = "UPDATE_OBJ";
-export const GET_SINGLE_OBJ = "GET_SINGLE_OBJ";
+export const GET_QS = "GET_QS";
+export const GET_DOC = "GET_DOCS"
+export const GET_SINGLE_Q = "GET_SINGLE_Q";
+export const GET_SINGLE_DOC = "GET_SINGLE_DOC";
