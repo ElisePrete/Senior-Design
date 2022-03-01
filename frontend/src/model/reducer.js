@@ -2,7 +2,7 @@ import * as types from "./actionTypes"
 
 const initialState = {
     objs:[],
-    obj: {},
+    obj: [],
     msg: ""
 }
 const objReducer = (state = initialState, action) => {

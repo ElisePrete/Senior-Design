@@ -1,7 +1,8 @@
 /*React UI component of those 'other' or 'doc' buttons which appear at the beginning.
 connects each button to their respective function/widget*/
-const Options = (props) => {
-    const options = [
+const InitialOptions = (props) => {
+    console.log("initializin'")
+    const optionsI = [
         {
             text:"Find Documents",
             handler:props.actionProvider.handleDocuments,
@@ -15,7 +16,7 @@ const Options = (props) => {
         
     ];
 
-    const buttonsMarkup = options.map((option) => (
+    const buttonsMarkup = optionsI.map((option) => (
         <button key={option.id} onClick={option.handler} className="option-button">
             {option.text}
         </button>
@@ -26,4 +27,4 @@ const Options = (props) => {
 
 }
 
-export default Options
+export default InitialOptions

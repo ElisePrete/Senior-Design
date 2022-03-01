@@ -7,4 +7,4 @@ const rootReducer = combineReducers( {
 
 export default rootReducer;
 
-console.log("rootReducer | rootReducer: %s ",rootReducer);
+//console.log("rootReducer | rootReducer: %s ",rootReducer);

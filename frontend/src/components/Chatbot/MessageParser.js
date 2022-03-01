@@ -15,6 +15,7 @@ class MessageParser {
       }
       if (this.state.DocumentSearch == -1){ //if user doesn't hasn't chosen 'other' or 'doc'
         if (lowercase.includes('other')) {
+          this.state.howManyQs =0
           this.actionProvider.handleOtherSetup(lowercase);
           this.state.DocumentSearch = 0
         }
@@ -22,8 +23,31 @@ class MessageParser {
           this.state.DocumentSearch = 1
         }
       }
+      /* User is NOT searching for docs */
       else if (this.state.DocumentSearch == 0 ){
-        this.actionProvider.handleOther(lowercase);
+        if (this.state.OtherOptions) {
+          if (lowercase.includes('yes')) {
+            this.actionProvider.handleInitialOptions()
+          }
+          else if (lowercase.includes('more')) {
+            this.actionProvider.handleOther(lowercase,4);
+          }
+          else if (lowercase.includes('no') || lowercase.includes('rephrase') ) {
+            this.actionProvider.handleOtherSetup(lowercase);
+          }
+          else {
+            this.actionProvider.handleConfusion()
+          }
+          return
+        }
+        if (this.state.howManyQs ==0) {
+          this.actionProvider.handleOther(lowercase,1);
+        }
+        else {
+          this.actionProvider.handleOther(lowercase,4);
+        }
+        
+        this.state.DocumentSearch = -1
       }
 
       

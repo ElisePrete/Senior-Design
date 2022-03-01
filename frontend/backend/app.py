@@ -25,27 +25,33 @@ def index():
 @app.route("/api/Question",methods=["GET"])
 def getQuestion():
     question = str(request.args.get('input'))
-
-    ###YO ELISE !!!!
-    docs = list(db.Questions.find( { '$text': { '$search': question } } ).limit(1))
+    howMany = int(request.args.get('many'))
+    if not question:
+        print("question is empty")
+        return {}
+    print("q:{question},#:{many}")
     '''text search lets u search for n-many entries that are similar to the text
     you provide in '$search'. i limit it to search for 1 here ^'''
-    ### LOOK HEREEEE
-
-    doc = {#default doc returned. shown if none found
-            'question': "question not found",
-            'link':"", 
-            'answer':"Please search again"
-        }
-    if (len(docs) > 0):
-        doc = docs[0] #.find $text $search returns a cursor Object Array‚ so we get first result
-        doc = {
+    found = list(db.Questions.find( { '$text': { '$search': question } } ).limit(howMany))
+    '''  found = list(db.Questions.aggregate(
+        [{ '$match': {'answer':'...'}}]
+    ))'''
+    docs = []
+    for doc in found:
+    #print("doc:" + doc['answer'])
+        docs.append({
             '_id':str(ObjectId(doc['_id'])),
             'question': doc['question'],
             'link':doc['link'],
             'answer':doc['answer']
-        }
-    return jsonify(doc)
+        })
+    if len(docs) == 0:
+        docs = [{#default doc returned. shown if none found
+            'question': "question not found",
+            'link':"", 
+            'answer':"Please search again"
+        }]
+    return jsonify(docs)
 
 @app.route("/api/Questions",methods=["GET"])
 def getDocs():

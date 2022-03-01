@@ -1,9 +1,11 @@
 
 import React from "react";
 import { createChatBotMessage } from "react-chatbot-kit";
-import Options from './Options/Options'
+import InitialOptions from './InitialOptions/InitialOptions'
+import MoreOptions from "./MoreOptions/MoreOptions";
 import Other from './OtherQandA/Other'
-/*import Overview from "../components/widgets/Overview/Overview";
+/*
+import Overview from "../components/widgets/Overview/Overview";
 import MessageParser from "../components/widgets/MessageParser/MessageParser";
 /import ActionProviderDocs from "../components/widgets/ActionProvider/ActionProviderDocs";
 */
@@ -15,28 +17,39 @@ const config = {
   state: {
     DocumentKeywords:[], //Search terms for document
     OtherQuestion:"", //search string for other questions
-    DocumentSearch:-1 //-1 = untouched | 0 = false | 1 = true
+    DocumentSearch:-1, //-1 = untouched | 0 = false | 1 = true
+    howManyQs:0, //either 1 or 4 depending on user satisfaction
+    OtherOptions:false //'rephrase' 'yes' 'no' are important in this case
   },
   initialMessages: [
     createChatBotMessage(
       `Welcome to Dfind! What would you like to find?`, {
-        widget:"options"
+        widget:"InitialOptions"
       }
     )],
   widgets: [ //registering components inside of the chatbot-kit
     { /*Function which grabs a question from mongo*/
       widgetName: "Other",
       widgetFunc: (props) => <Other{...props} /> ,
-      mapStateToProps: ["OtherQuestion"],
+      mapStateToProps: ["OtherQuestion","howManyQs"],
 
     },
-    
-    
-    {
-      widgetName: "options",
-      widgetFunc: (props) => <Options{...props} /> 
+    { /*The first buttons spawned in the chat*/
+      widgetName: "InitialOptions",
+      widgetFunc: (props) => <InitialOptions{...props} /> 
     },
-   /* {
+    { /*buttons presented after results.*/
+      widgetName:"MoreOptions",
+      widgetFunc: (props) => <MoreOptions{...props} />,
+      mapStateToProps: ["howManyQs"],
+    },
+ /*   { //may make 'more results' a different widget so that they appear se[erate in the chatbot. either that or results appear outside the chatbot]
+      widgetName:"MoreResutl",
+      widgetFunc: (props) => <MoreOptions{...props} />,
+      mapStateToProps: ["howManyQs"],
+    },*/
+   /*Example: (don't delete)
+    {
       widgetName: "Quiz",
       widgetFunc: (props) => <Quiz{...props} /> ,//getting access to actionProvider
       props:{

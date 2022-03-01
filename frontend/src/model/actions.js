@@ -38,11 +38,18 @@ export const loadQuestions = () => {
         .catch((err) => console.log("error:", err))
      }
 }
-export const loadQuestion = (question) => {
-    console.log("in loadquestion:", question)
+export const loadQuestion = ({OtherQuestion,howMany}) => {
+    //OtherQuestion = params['OtherQuestion']
+    //howMany = params['howMany']
+    //,"how many:", OtherQuestion[0['howMany']
+    console.log("in loadquestion:", OtherQuestion,"how many",howMany)
+    
     return function(dispatch) {
-        axios.get(`${API}/api/Question`, {params:{input:question}})
+        axios.get(`${API}/api/Question`, { params:{
+            input:OtherQuestion,
+            many:howMany}
+        })
         .then((resp) =>  dispatch(getQuestion(resp.data)) )
-        .catch((err) => console.log("error:", err))
+        .catch((err) => console.log("load question error:", err))
      }
 }
