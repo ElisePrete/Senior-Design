@@ -20,7 +20,10 @@ class MessageParser {
           this.state.DocumentSearch = 0
         }
         else if (lowercase.includes('document')) {
-          this.state.DocumentSearch = 1
+          this.actionProvider.handleDocuments()
+          // this.state.DocumentSearch = 1
+          /* THIS IS TEMPORARY--- CHANGE LATER ---*/
+          this.actionProvider.handleInitialOptions() 
         }
       }
       /* User is NOT searching for docs */

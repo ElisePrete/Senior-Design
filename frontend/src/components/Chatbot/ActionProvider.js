@@ -29,7 +29,8 @@ class ActionProvider {
       ...state,
       howManyQs:0,
       OtherQuestion: "",
-      handleOther:false
+      handleOther:false,
+      DocumentSearch:-1
     }))
 
     this.addMessageToState(this.createChatBotMessage(
@@ -59,7 +60,9 @@ class ActionProvider {
     this.setState((state) => ({
       ...state,
       DocumentSearch:false,
-      OtherQuestion: ""
+      OtherQuestion: "",
+      OtherOptions:false,
+      howManyQs:0
     }))
     const message = this.createChatBotMessage("Enter your question:")
     this.addMessageToState(message)
