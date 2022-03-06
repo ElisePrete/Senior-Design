@@ -35,7 +35,7 @@ class MessageParser {
           else if (lowercase.includes('more')) {
             this.actionProvider.handleOther(lowercase,4);
           }
-          else if (lowercase.includes('no') || lowercase.includes('rephrase') ) {i
+          else if (lowercase.includes('no') || lowercase.includes('rephrase') ) {
             this.actionProvider.handleOtherSetup(lowercase);
           }
           else {
