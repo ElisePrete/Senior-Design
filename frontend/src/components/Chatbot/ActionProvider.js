@@ -53,6 +53,7 @@ class ActionProvider {
   handleDocuments = () => {
     const message = this.createChatBotMessage("docs not supported atm")
     this.addMessageToState(message) //adds message to ui
+    this.handleInitialOptions()
   }
 
   //function to setup 'other q and a' questions

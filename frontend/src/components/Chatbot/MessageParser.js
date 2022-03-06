@@ -23,7 +23,7 @@ class MessageParser {
           this.actionProvider.handleDocuments()
           // this.state.DocumentSearch = 1
           /* THIS IS TEMPORARY--- CHANGE LATER ---*/
-          this.actionProvider.handleInitialOptions() 
+          //this.actionProvider.handleInitialOptions() 
         }
       }
       /* User is NOT searching for docs */
@@ -35,7 +35,7 @@ class MessageParser {
           else if (lowercase.includes('more')) {
             this.actionProvider.handleOther(lowercase,4);
           }
-          else if (lowercase.includes('no') || lowercase.includes('rephrase') ) {
+          else if (lowercase.includes('no') || lowercase.includes('rephrase') ) {i
             this.actionProvider.handleOtherSetup(lowercase);
           }
           else {
