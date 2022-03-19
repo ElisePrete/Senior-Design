@@ -1,0 +1,24 @@
+.DocPage {
+    min-height: 100vh; 
+}
+
+.DocSummary {
+    width:40%;
+    float:right;
+    
+}
+.FullText {
+    width:55%;
+    float:left;
+    white-space: pre-wrap;
+}
+
+.Both {
+    overflow-y: scroll;
+    scrollbar-color: white #359;
+    scrollbar-width: thin;
+    border:black solid 1px;
+    margin:5px;
+    max-height:100vh;
+}
+

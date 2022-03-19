@@ -90,7 +90,7 @@ def findDocs():
 def getDoc():
     docID = str(request.args.get('input'))
     fulldoc = list(db.Documents.find({"_id" :docID}))[0]  #["fullText"]
-    print("FULLtEXT:",fulldoc)
+    #print("FULLtEXT:",fulldoc)
     return jsonify(fulldoc)
 
 if __name__ == '__main__':
