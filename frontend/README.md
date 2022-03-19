@@ -35,10 +35,9 @@ mongo -u <username> -p <password> dFind
 
 ### How to run locally:
 
-- cd /frontend
-- npm run start
+- cd frontend;npm run start
 in new terminal:
-- npm run start-api
+- cd frontend;npm run start-api
 
 view on http://localhost:3000
 not localhost:5000 !!!

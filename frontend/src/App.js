@@ -6,10 +6,10 @@ import Document from './components/DocumentPage/Document'
 function App() {
   //class=" bg-light"
   return (
-    <Router>
+    <Router >
         <Routes>
         <Route path="/"  element={<Home className="Page"/>}/>
-        <Route path="document" element={ <Document className="Page" />} />  
+        <Route path="document/:docID" element={ <Document className="Page" />} />  
       </Routes>
     </Router>
   );
