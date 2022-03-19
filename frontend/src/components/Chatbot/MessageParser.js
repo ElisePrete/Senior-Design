@@ -14,20 +14,19 @@ class MessageParser {
         this.actionProvider.greet();
       }
       if (this.state.DocumentSearch == -1){ //if user doesn't hasn't chosen 'other' or 'doc'
+        this.actionProvider.handleOtherSetup(lowercase);
         if (lowercase.includes('other')) {
           this.state.howManyQs =0
-          this.actionProvider.handleOtherSetup(lowercase);
           this.state.DocumentSearch = 0
         }
         else if (lowercase.includes('document')) {
-          this.actionProvider.handleDocuments()
-          // this.state.DocumentSearch = 1
+          this.state.DocumentSearch = 1
           /* THIS IS TEMPORARY--- CHANGE LATER ---*/
           //this.actionProvider.handleInitialOptions() 
         }
       }
       /* User is NOT searching for docs */
-      else if (this.state.DocumentSearch == 0 ){
+      else if (this.state.DocumentSearch == false){
         if (this.state.OtherOptions) {
           if (lowercase.includes('yes')) {
             this.actionProvider.handleInitialOptions()
@@ -51,6 +50,9 @@ class MessageParser {
         }
         
         this.state.DocumentSearch = -1
+      }
+      else { //user is searching for documents
+        this.actionProvider.handleDocuments(lowercase)
       }
 
       

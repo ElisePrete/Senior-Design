@@ -1,11 +1,10 @@
 /*React UI component of those 'other' or 'doc' buttons which appear at the beginning.
 connects each button to their respective function/widget*/
 const InitialOptions = (props) => {
-    console.log("initializin'")
     const optionsI = [
         {
             text:"Find Documents",
-            handler:props.actionProvider.handleDocuments,
+            handler:props.actionProvider.handleDocSetup,
             id:1
         },
         {

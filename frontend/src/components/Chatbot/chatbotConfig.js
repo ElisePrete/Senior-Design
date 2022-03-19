@@ -4,6 +4,7 @@ import { createChatBotMessage } from "react-chatbot-kit";
 import InitialOptions from './InitialOptions/InitialOptions'
 import MoreOptions from "./MoreOptions/MoreOptions";
 import Other from './OtherQandA/Other'
+import DocSearch from './DocSearch/DocSearch'
 /*
 import Overview from "../components/widgets/Overview/Overview";
 import MessageParser from "../components/widgets/MessageParser/MessageParser";
@@ -16,7 +17,7 @@ const config = {
   were a classtype‚ these would be its properties */
   state: {
     DocumentKeywords:[], //Search terms for document
-    OtherQuestion:"", //search string for other questions
+    InputQuestion:"", //search string for other questions
     DocumentSearch:-1, //-1 = untouched | 0 = false | 1 = true
     howManyQs:0, //either 1 or 4 depending on user satisfaction
     OtherOptions:false //'rephrase' 'yes' 'no' are important in this case
@@ -31,7 +32,13 @@ const config = {
     { /*Function which grabs a question from mongo*/
       widgetName: "Other",
       widgetFunc: (props) => <Other{...props} /> ,
-      mapStateToProps: ["OtherQuestion","howManyQs"],
+      mapStateToProps: ["InputQuestion","howManyQs"],
+
+    },
+    { /*Function which grabs a question from mongo*/
+      widgetName: "DocSearch",
+      widgetFunc: (props) => <DocSearch{...props} /> ,
+      mapStateToProps: ["InputQuestion"],
 
     },
     { /*The first buttons spawned in the chat*/

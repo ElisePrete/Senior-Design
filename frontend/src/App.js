@@ -1,28 +1,17 @@
 import './App.css';
-import  GetStarted from './components/GetStarted/GetStarted'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import CBot from './components/Chatbot/Chatbot';
-import { MDBCol,MDBContainer } from 'mdb-react-ui-kit';
-import {Navbar} from "react-bootstrap"
+import Home from './components/HomePage/Home'
+import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
+import Document from './components/DocumentPage/Document'
+
 function App() {
   //class=" bg-light"
   return (
-    
-    <div className="App"  >
-      <Navbar bg="primary" variant="light" className="justify-content-center">
-            <h1 style={{ color: "white",flexDirection:"row",flexWrap: "wrap", }}> D.Find </h1>
-      </Navbar>
-      <MDBContainer style = {{display:'flex'}}>
-      
-        <GetStarted/>
-        <MDBCol >
-          <CBot/>
-        </MDBCol>
-      </MDBContainer>
-      
-      
-     
-    </div>
+    <Router>
+        <Routes>
+        <Route path="/"  element={<Home className="Page"/>}/>
+        <Route path="document" element={ <Document className="Page" />} />  
+      </Routes>
+    </Router>
   );
 }
 

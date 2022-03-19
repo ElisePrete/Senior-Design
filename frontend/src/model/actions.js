@@ -5,7 +5,7 @@ var API = window.location.host //"http://127.0.0.1:5000"
 //talk to model through functions on this page
 
 //for local or remote differentiation
-console.log("API:",API)
+//console.log("API:",API)
 if (API == 'localhost:3000') {
     API = 'http://127.0.0.1:5000'
 }
@@ -31,6 +31,19 @@ const getQuestion = (objs) => (
     payload:objs
 });
 
+const getDocuments = (docs) => (
+    {
+    type: types.GET_DOCS,
+    payload:docs
+});
+
+const getDocument = (doc) => (
+    {
+    type: types.GET_SINGLE_DOC,
+    payload:doc
+});
+
+
 export const loadQuestions = () => {
     return function(dispatch) {
         axios.get(`${API}/api/Questions`)
@@ -38,18 +51,38 @@ export const loadQuestions = () => {
         .catch((err) => console.log("error:", err))
      }
 }
-export const loadQuestion = ({OtherQuestion,howMany}) => {
-    //OtherQuestion = params['OtherQuestion']
+export const loadQuestion = ({InputQuestion,howMany}) => {
+    //InputQuestion = params['InputQuestion']
     //howMany = params['howMany']
-    //,"how many:", OtherQuestion[0['howMany']
-    console.log("in loadquestion:", OtherQuestion,"how many",howMany)
-    
+    //,"how many:", InputQuestion[0['howMany']
+    //console.log("in loadquestion:", InputQuestion,"how many",howMany)
     return function(dispatch) {
         axios.get(`${API}/api/Question`, { params:{
-            input:OtherQuestion,
+            input:InputQuestion,
             many:howMany}
         })
         .then((resp) =>  dispatch(getQuestion(resp.data)) )
         .catch((err) => console.log("load question error:", err))
+     }
+}
+
+export const loadDocuments = ({InputQuestion}) => {
+    //console.log("actionjs:",InputQuestion)
+    return function(dispatch) {
+        axios.get(`${API}/api/Documents`, { params:{
+            input:InputQuestion}
+        })
+        .then((resp) =>  dispatch(getDocuments(resp.data)) )
+        .catch((err) => console.log("error:", err))
+     }
+}
+
+export const loadDocument = ({docID}) => {
+    return function(dispatch) {
+        axios.get(`${API}/api/Document`, { params:{
+            input:docID}
+        })
+        .then((resp) =>  dispatch(getDocument(resp.data)) )
+        .catch((err) => console.log("error:", err))
      }
 }

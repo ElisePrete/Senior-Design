@@ -3,6 +3,8 @@ import * as types from "./actionTypes"
 const initialState = {
     objs:[],
     obj: [],
+    docs:[],
+    doc:{},
     msg: ""
 }
 const objReducer = (state = initialState, action) => {
@@ -18,6 +20,16 @@ const objReducer = (state = initialState, action) => {
                 ...state,
                 obj:action.payload
             }
+        case types.GET_DOCS:
+            return{
+                ...state,
+                docs:action.payload
+            }
+        case types.GET_SINGLE_DOC:
+        return{
+            ...state,
+            doc:action.payload
+        }
         default:
             return state;
     }

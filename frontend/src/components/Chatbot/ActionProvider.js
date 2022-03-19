@@ -28,7 +28,7 @@ class ActionProvider {
     this.setState((state) => ({
       ...state,
       howManyQs:0,
-      OtherQuestion: "",
+      InputQuestion: "",
       handleOther:false,
       DocumentSearch:-1
     }))
@@ -50,22 +50,41 @@ class ActionProvider {
     this.addMessageToState(message) //adds message to ui
   }
   //function to fetch docs
-  handleDocuments = () => {
-    const message = this.createChatBotMessage("docs not supported atm")
+  handleDocuments = (question) => {
+    this.setState((state) => ({
+      ...state,
+     // OtherOptions:true,
+      InputQuestion:question
+     }))
+    var message = this.createChatBotMessage("Docs found:",{ widget:"DocSearch"})
+    this.addMessageToState(message)
+   /* const message = this.createChatBotMessage("docs not supported atm")
     this.addMessageToState(message) //adds message to ui
-    this.handleInitialOptions()
+    this.handleInitialOptions() */
   }
 
   //function to setup 'other q and a' questions
   handleOtherSetup = () => {
     this.setState((state) => ({
       ...state,
+      InputQuestion: "",
+      OtherOptions:false,
       DocumentSearch:false,
-      OtherQuestion: "",
+      howManyQs:0
+    }))
+    const message = this.createChatBotMessage("What would you like to know about the claims process?")
+    this.addMessageToState(message)
+  }
+
+  handleDocSetup = () => {
+    this.setState((state) => ({
+      ...state,
+      InputQuestion: "",
+      DocumentSearch:true,
       OtherOptions:false,
       howManyQs:0
     }))
-    const message = this.createChatBotMessage("Enter your question:")
+    const message = this.createChatBotMessage("What are you searching for?:")
     this.addMessageToState(message)
   }
 
@@ -83,7 +102,7 @@ class ActionProvider {
     this.setState((state) => ({
       ...state,
       OtherOptions:true,
-      OtherQuestion:state.OtherQuestion +" " + question,
+      InputQuestion:state.InputQuestion +" " + question,
       howManyQs:num
      })
     )

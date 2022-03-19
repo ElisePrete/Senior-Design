@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify #all needed for json response for react apps
 from flask_pymongo import PyMongo,  ObjectId; #to create unique id's for each doc
 from flask_cors import CORS; #allows browser to interact with db
-
+from query import pre_process
 
 #just type ur username and password in the params below so that github doesn't scream at us
 username = "lizz"
@@ -54,7 +54,7 @@ def getQuestion():
     return jsonify(docs)
 
 @app.route("/api/Questions",methods=["GET"])
-def getDocs():
+def getQuestions():
     docs = []
     for doc in db.Questions.find().limit(10):
         #print("doc:" + doc['answer'])
@@ -66,7 +66,32 @@ def getDocs():
         })
     return jsonify(docs)
 
+# https://stackoverflow.com/questions/43779319/mongodb-text-search-exact-match-using-variable 
+@app.route("/api/Documents",methods=["GET"])
+def findDocs():
+    input = str(request.args.get('input'))
+    print("at app.py:" + input)
+    query = pre_process(input)
+    query = {"$search" :"(\"{}\"".format(query)}
+    #docs = list(db.Summaries.find({'$text':{'$search': query }}).limit(8933))  # UNION
+    ans = list(db.Summaries.find({"$text": query}))                         # INTERSECTION
+    docs = []
+    for doc in ans:
+        #print("doc:" + doc['answer'])
+        docs.append({
+            '_id':doc['_id'],
+            'summary': doc['summary'],
+            'tags':doc['tags']
+        })
+    print(len(docs)) 
+    return jsonify(docs)
 
+@app.route("/api/Document",methods=["GET"])
+def getDoc():
+    docID = str(request.args.get('input'))
+    fulldoc = list(db.Documents.find({"_id" :docID}))[0]  #["fullText"]
+    print("FULLtEXT:",fulldoc)
+    return jsonify(fulldoc)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0',port='5000')

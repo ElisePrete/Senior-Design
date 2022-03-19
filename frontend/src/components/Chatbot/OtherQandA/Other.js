@@ -7,16 +7,17 @@ import OtherMore from "./OtherMore.js"
 user asks a question independent of docs*/
 const Other = (params) => {
     //we call axios dispatch here
-    var OtherQuestion = params['OtherQuestion']
+    var InputQuestion = params['InputQuestion']
     var howMany = params['howManyQs']
     //console.log("Other | hm",params)
     const dispatch = useDispatch();
     var {obj} = useSelector(state => state.data)
+    
     useEffect(() => {
-        dispatch(loadQuestion({OtherQuestion,howMany}));
+        dispatch(loadQuestion({InputQuestion,howMany}));
         //console.log("obj:",obj)
     }, [])
-    if (OtherQuestion == undefined || howMany == undefined) {
+    if (InputQuestion == undefined || howMany == undefined) {
        // console.log("returned empty div")
         return (<tbody></tbody>)
     }
