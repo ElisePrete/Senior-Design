@@ -12,8 +12,8 @@ from textblob import TextBlob
 import re
 
 # https://stackabuse.com/integrating-mongodb-with-flask-using-flask-pymongo/
-username = "elise"
-password = "pleasework123"
+username = ""
+password = ""
 app = flask.Flask(__name__)
 app.config['MONGO_URI']= f'mongodb://{username}:{password}@34.230.218.59/dFind'
 client = PyMongo(app)
