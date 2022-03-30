@@ -12,8 +12,8 @@ from textblob import TextBlob
 import re
 
 # https://stackabuse.com/integrating-mongodb-with-flask-using-flask-pymongo/
-username = ""
-password = ""
+username = "elise"
+password = "pleasework123"
 app = flask.Flask(__name__)
 app.config['MONGO_URI']= f'mongodb://{username}:{password}@34.230.218.59/dFind'
 client = PyMongo(app)
@@ -25,6 +25,13 @@ dFind_stop_words = ["find", "help","me","my", "mine", "want", "docs", "documents
 
 def pre_process(Query):                    # makes string lowercase, removes stop words
     Query = Query.lower()
+    Q = Query.split()
+    new_query = []
+    for w in Q:
+        if w == "ptsd" or w == "post-traumatic stress disorder" or w == "post traumatic stress disorder":
+            w = "posttraumatic stress disorder"
+        new_query.append(w)
+    Query = ' '.join(new_query)
     #Query = TextBlob(Query)               # not helpful, removes important words like "ptsd"
     #Query = str(Query.correct())
     words = nltk.word_tokenize(Query)      # tokenize string 
@@ -41,7 +48,7 @@ def findDocs(query):
     q = query.split()
     ans = []
     listOfRegex = []
-    # LOOKS FOR INDIVIDUAL WORDS' INTERSECTION
+    # METHOD 1 - LOOKS FOR INDIVIDUAL WORDS' INTERSECTION FIRST
     if len(q) != 0:
         for i in range(len(q)):
             temp = {"tags": { "$regex" : "^{}\s.*".format(q[i]), "$options": 'i' } }  # formats word into regex search that is case insensitive
@@ -50,28 +57,43 @@ def findDocs(query):
     else:
         docs = []
 
-    # if first method returns no docs, try looking for the words as a phrase  
+    # IF METHOD 1 RETURNS NO DOCS, LOOKS FOR THE WORDS AS A PHRASE 
     if len(docs) == 0 and len(query) != 0:      
-        if "remanded" in q or "granted" in q or "dismissed" in q or "denied" in q: 
+        if "remanded" in q or "granted" in q or "dismissed" in q or "denied" in q:   # if contains special word
             decisionName = ""
             typeDecision = {"remanded": ("remanded" in q), "granted": ("granted" in q), "dismissed": ("dismissed" in q), "denied": ("denied" in q)}
             for key,val in typeDecision.items():                            # finds position of decision to separate it when searching
                 if val == True:
                     decisionName = key                                      # decision type 
+            listOfRegex0 = [{"tags": { "$regex" : "{}".format(decisionName), "$options": 'i' } }]  
+            q.remove(decisionName) 
+            qu = " ".join(q)
+            # METHOD 2
+            listOfRegex0.append({"$text": {"$search" :"(\"{}\"".format(qu)}})     # if no matches for this, break up into single words
+            docs = list(DB.Summaries.find( { "$and": listOfRegex0 } ) ) 
+            query = listOfRegex0
 
-            listOfRegex2 = [{"tags": { "$regex" : "{}".format(decisionName), "$options": 'i' } }]   # initially add search for decision 
-            q.remove(decisionName)                                                                  # remove decision from query
-            for i in range(len(q)):                                                                 # searches other words as a phrase
-               temp2 = {"tags": { "$regex" : "^{}\s.*".format(q[i]), "$options": 'i' } }
-               listOfRegex2.append(temp2)
-            docs = list(DB.Summaries.find( { "$and": listOfRegex2 } ) )                             # intersection of decision and phrase
+            if len(docs) == 0:  
+                # METHOD 1
+                listOfRegex2 = [{"tags": { "$regex" : "{}".format(decisionName), "$options": 'i' } }]   # initially add search for decision 
+                for i in range(len(q)):                                                                 # searches other words as a phrase
+                    temp2 = {"tags": { "$regex" : "^{}\s.*".format(q[i]), "$options": 'i' } }
+                    listOfRegex2.append(temp2)
+                docs = list(DB.Summaries.find( { "$and": listOfRegex2 } ) )                             # intersection of decision and phrase
 
-            print("query after:", q, "decision: ", decisionName)
-            print("listOfRegex2: ", listOfRegex2)
+                #print("listOfRegex2: ", listOfRegex2)
 
-        else:                                               
-            query = {"$search" :"(\"{}\"".format(query)}
-            docs = list(DB.Summaries.find({"$text": query}))     
+        else:             
+            # METHOD 1                                    
+            listOfRegex3 = []
+            for word in q:
+                temp3 = {"tags": { "$regex" : "^{}\s.*".format(word), "$options": 'i' } }  
+                listOfRegex3.append(temp3)
+            docs = list(DB.Summaries.find( { "$and": listOfRegex } ) )
+            if len(docs) == 0:
+                # METHOD 2
+                query = {"$search" :"(\"{}\"".format(query)}   
+                docs = list(DB.Summaries.find({"$text": query}))      
             
         if len(docs) == 0:                                  
             ans = "No documents match, try rephrasing your search." 
@@ -86,13 +108,12 @@ def findDocs(query):
             for i in range(len(docs)):
                 ans.append(docs[i].get('_id'))
 
-    print("query before:", query)
-    print("num docs: ", len(docs), "len of ans = ", len(ans))
-    print(ans)
+    #print("query:", query)
+    #print("num docs: ", len(docs), "len of ans = ", len(ans))
+    #print(ans)
     
     return jsonify(ans)
 
-# PROBLEMS: ptsd 
 with app.app_context():
     q = input("Enter query: ")
     q = pre_process(q)
@@ -132,7 +153,8 @@ TESTS
 
 UNUSED 
     #query = {"$search" :"(\"{}\"".format(query)}
-    #docs = list(DB.Summaries.find({'$text':{'$search': query }}).limit(8933))   # UNUIN of query words
+    #docs = list(DB.Summaries.find({'$text':{'$search': query }}).limit(8933))   # UNION of query words
     #docs = list(DB.Summaries.find({"$text": query}))                            # INTERSECTION of query words
 
 '''
+
