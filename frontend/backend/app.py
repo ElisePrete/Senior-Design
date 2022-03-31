@@ -3,6 +3,8 @@ from flask_pymongo import PyMongo,  ObjectId; #to create unique id's for each do
 from flask_cors import CORS; #allows browser to interact with db
 from query import pre_process
 
+from textblob import TextBlob
+
 #just type ur username and password in the params below so that github doesn't scream at us
 username = "lizz"
 password = "datadatadata"
@@ -25,6 +27,11 @@ def index():
 @app.route("/api/Question",methods=["GET"])
 def getQuestion():
     question = str(request.args.get('input'))
+    docs = getQuestionHandler(question)
+    return jsonify(docs)
+
+def getQuestionHandler(question):
+    print(f'q:{question} tb(q):{TextBlob(question).correct()}')
     howMany = int(request.args.get('many'))
     if not question:
         print("question is empty")
@@ -46,31 +53,37 @@ def getQuestion():
             'answer':doc['answer']
         })
     if len(docs) == 0:
+        tbquestion = TextBlob(question).correct()
+        if (question != tbquestion):
+            return getQuestionHandler(str(tbquestion))
+        
         docs = [{#default doc returned. shown if none found
             'question': "question not found",
             'link':"", 
             'answer':"Please search again"
         }]
-    return jsonify(docs)
+    return docs
+
 
 @app.route("/api/Questions",methods=["GET"])
 def getQuestions():
     docs = []
     for doc in db.Questions.find().limit(10):
-        #print("doc:" + doc['answer'])
+        
         docs.append({
             '_id':str(ObjectId(doc['_id'])),
             'question': doc['question'],
             'link':doc['link'],
             'answer':doc['answer']
         })
+    print("q in app.py", len(docs))
     return jsonify(docs)
 
 # https://stackoverflow.com/questions/43779319/mongodb-text-search-exact-match-using-variable 
 @app.route("/api/Documents",methods=["GET"])
 def findDocs():
     input = str(request.args.get('input'))
-    print("at app.py:" + input)
+    #print("at app.py:" + input)
     query = pre_process(input)
     query = {"$search" :"(\"{}\"".format(query)}
     #docs = list(db.Summaries.find({'$text':{'$search': query }}).limit(8933))  # UNION
@@ -96,50 +109,3 @@ def getDoc():
 if __name__ == '__main__':
     app.run(host='0.0.0.0',port='5000')
 
-
-
-'''
-#NOTE: ALL FUNCTIONS BELOW WERE MADE FOR DEMO (recyclable)
-@app.route("/docs",methods=["POST"])
-def createDoc():
-    id = db.insert({ #temp doc object with single keyword and text
-        'keyword': request.json['keyword'],
-        'text': request.json['text'],
-    })
-    return jsonify({'id':str(id), 'msg':'doc added!'}) #unique id objecy
-
-@app.route("/docs",methods=["GET"])
-def getDocs():
-    docs = []
-    for doc in db.find():
-        docs.append({
-            '_id':str(ObjectId(doc['_id'])),
-            'keyword': doc['keyword'],
-            'text':doc['text']
-        })
-    return jsonify(docs)
-
-@app.route("/docs/<id>",methods=["GET"])
-def getDoc(id):
-    doc = db.find_one({'_id': ObjectId(id)})
-    return jsonify({
-        'keyword': doc['keyword'],
-        'text':doc['text']
-    })
-
-@app.route("/docs/<id>",methods=["DELETE"])
-def deleteDoc(id):
-    doc = db.delete_one({'_id': ObjectId(id)})
-    return jsonify({
-        'msg': 'doc deleted'
-    })
-
-@app.route("/docs/<id>",methods=["PUT"])
-def updateDoc(id):
-    db.update_one({
-            '_id':ObjectId(id)}, {'$set':{
-            'keyword': request.json['keyword'],
-            'text':request.json['text']
-        }})
-    return jsonify({'msg':'doc updated!'})
-'''

@@ -55,12 +55,16 @@ class ActionProvider {
       ...state,
      // OtherOptions:true,
       InputQuestion:question
+      //showDocs:true
      }))
     var message = this.createChatBotMessage("Docs found:",{ widget:"DocSearch"})
     this.addMessageToState(message)
    /* const message = this.createChatBotMessage("docs not supported atm")
     this.addMessageToState(message) //adds message to ui
     this.handleInitialOptions() */
+    message =  this.createChatBotMessage("Type to search for more documents or..." , { widget:"DocOptions" })
+    this.addMessageToState(message)
+    
   }
 
   //function to setup 'other q and a' questions

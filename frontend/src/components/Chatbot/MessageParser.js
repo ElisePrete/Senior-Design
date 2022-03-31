@@ -14,16 +14,18 @@ class MessageParser {
         this.actionProvider.greet();
       }
       if (this.state.DocumentSearch == -1){ //if user doesn't hasn't chosen 'other' or 'doc'
-        this.actionProvider.handleOtherSetup(lowercase);
+        
         if (lowercase.includes('other')) {
           this.state.howManyQs =0
           this.state.DocumentSearch = 0
+          this.actionProvider.handleOtherSetup() 
         }
         else if (lowercase.includes('document')) {
           this.state.DocumentSearch = 1
           /* THIS IS TEMPORARY--- CHANGE LATER ---*/
-          //this.actionProvider.handleInitialOptions() 
+          this.actionProvider.handleDocSetup() 
         }
+
       }
       /* User is NOT searching for docs */
       else if (this.state.DocumentSearch == false){

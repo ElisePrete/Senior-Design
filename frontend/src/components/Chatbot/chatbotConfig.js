@@ -3,6 +3,7 @@ import React from "react";
 import { createChatBotMessage } from "react-chatbot-kit";
 import InitialOptions from './InitialOptions/InitialOptions'
 import MoreOptions from "./MoreOptions/MoreOptions";
+import DocOptions from "./DocOptions/DocOptions";
 import Other from './OtherQandA/Other'
 import DocSearch from './DocSearch/DocSearch'
 /*
@@ -21,10 +22,11 @@ const config = {
     DocumentSearch:-1, //-1 = untouched | 0 = false | 1 = true
     howManyQs:0, //either 1 or 4 depending on user satisfaction
     OtherOptions:false //'rephrase' 'yes' 'no' are important in this case
+    //,showDocs:false
   },
   initialMessages: [
     createChatBotMessage(
-      `Welcome to Dfind! What would you like to find?`, {
+      `Welcome to Dfind!`, {
         widget:"InitialOptions"
       }
     )],
@@ -45,11 +47,16 @@ const config = {
       widgetName: "InitialOptions",
       widgetFunc: (props) => <InitialOptions{...props} /> 
     },
-    { /*buttons presented after results.*/
+    { /*buttons presented after claims results.*/
       widgetName:"MoreOptions",
       widgetFunc: (props) => <MoreOptions{...props} />,
       mapStateToProps: ["howManyQs"],
     },
+    { /*buttons presented after doc results.*/
+    widgetName:"DocOptions",
+    widgetFunc: (props) => <DocOptions{...props} />,
+   // mapStateToProps: ["howManyQs"],
+  },
  /*   { //may make 'more results' a different widget so that they appear se[erate in the chatbot. either that or results appear outside the chatbot]
       widgetName:"MoreResutl",
       widgetFunc: (props) => <MoreOptions{...props} />,

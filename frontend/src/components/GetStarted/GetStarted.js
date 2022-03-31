@@ -9,10 +9,11 @@ import {Table, Container, Row, Col} from "react-bootstrap"
  */
 function GetStarted() {
     const dispatch = useDispatch();
-    const {objs} = useSelector(state => state.data)
+    var {objs} = useSelector(state => state.data)
     useEffect(() => {
-        dispatch(loadQuestions());
+        dispatch(loadQuestions())
     }, [])
+    console.log("objs in getSTarted:", objs)
     return (
         <><Container className='getStarted'>
                 <Row>

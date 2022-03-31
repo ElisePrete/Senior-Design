@@ -5,6 +5,7 @@ import 'react-chatbot-kit/build/main.css'
 import config from "./chatbotConfig";
 import MessageParser from "./MessageParser"
 import ActionProvider from "./ActionProvider";
+import Rephrase from "./Rephrase"
 /*Chatbot UI component*/
 function CBot() {
   return (
@@ -13,9 +14,12 @@ function CBot() {
        config={config}
         messageParser={MessageParser}
         actionProvider={ActionProvider}
+        placeholderText= {"..."}
       />
     </div>
   );
 }
+
+
 
 export default CBot;

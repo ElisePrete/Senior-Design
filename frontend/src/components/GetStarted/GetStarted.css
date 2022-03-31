@@ -3,5 +3,5 @@
     float: left;
     flex:1;
     word-wrap: break-word;
-    visibility: collapse;
+    /*visibility: collapse;*/
 }

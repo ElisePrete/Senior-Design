@@ -25,10 +25,10 @@ const getQuestions = (objs) => (
     payload:objs
 });
 
-const getQuestion = (objs) => (
+const getQuestion = (obj) => (
     {
     type: types.GET_SINGLE_Q,
-    payload:objs
+    payload:obj
 });
 
 const getDocuments = (docs) => (
@@ -45,6 +45,7 @@ const getDocument = (doc) => (
 
 
 export const loadQuestions = () => {
+    console.log("in loadqs")
     return function(dispatch) {
         axios.get(`${API}/api/Questions`)
         .then((resp) =>  dispatch(getQuestions(resp.data)) )

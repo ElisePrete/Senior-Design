@@ -28,19 +28,27 @@ go to 'fill in connection fields individually' and fill out like so:
 ## How to connect to the remote server:
 
 in the same folder as the key:
-ssh -i <db-key-file>.pem ec2-user@34.230.218.59
+<code> ssh -i <db-key-file>.pem ec2-user@34.230.218.59 </code>
 within the server‚ you can connect to the db with:
-mongo -u <username> -p <password> dFind
+<code> mongo -u <username> -p <password> dFind </code>
 -------------------
 
 ### How to run locally:
+1. **OPTIONAL** i recommend activating the virt env:
+    <code> source .venv/bin/activate </code>
 
-- cd frontend;npm run start
-in new terminal:
-- cd frontend;npm run start-api
+2. if you've never run the project before install all requirements with:
+    <s> pip install -r requirements.txt </s>
+i tend to get errors and run this instead:
+    <code> cat requirements.txt | xargs -n 1 pip install </code>
 
-view on http://localhost:3000
-not localhost:5000 !!!
+3. if all requirements are already downloaded, only run these 2 commands:
+    <code> cd frontend;npm run start </code>
+
+4. and in new terminal:
+    <code> cd frontend;npm run start-api </code>
+
+5. view on http://localhost:3000 *not localhost:5000 !!!*
 -------------------
 
 ### How to deploy code changes:

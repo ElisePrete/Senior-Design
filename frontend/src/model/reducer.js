@@ -11,6 +11,7 @@ const objReducer = (state = initialState, action) => {
    // console.log("redcer.jss")
     switch(action.type) {
         case types.GET_QS: 
+            console.log("in action:", action.payload.length)
             return {
                 ...state,
                 objs: action.payload,

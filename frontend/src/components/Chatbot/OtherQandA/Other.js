@@ -1,6 +1,7 @@
 import { loadQuestion,loadQuestions } from '../../../model/actions';
 import React, {useEffect,useState} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import {Link} from "react-router-dom";
 import "./Other.css"
 import OtherMore from "./OtherMore.js"
 /*React UI component version (js and html) of the Other Q and A popup which appears when a 
@@ -19,21 +20,20 @@ const Other = (params) => {
     }, [])
     if (InputQuestion == undefined || howMany == undefined) {
        // console.log("returned empty div")
-        return (<tbody></tbody>)
+        return (<tbody>No results found, please rephrase</tbody>)
     }
     //preventing first result from resurfacing when new results are shown. only 4 extra results are supported atm
-    if (howMany == 4) {
+   /* if (howMany == 4) {
         return OtherMore(obj)
-    }
+    }*/
     //mapping requires key index for each entry
     return (<>
             {obj && Object.keys(obj).map((item,i) => (
-                <tbody key={i}>
-                    <tr>
-                        <td><b>{obj[item].question}</b></td>
-                        <td>{obj[item].link}</td>
-                    </tr>
+                <tbody key={i} className="link">
+                    
+                    <a href={obj[item].link}><b>{obj[item].question}</b></a><br/>
                 </tbody>
+                
         ))}
         
      
