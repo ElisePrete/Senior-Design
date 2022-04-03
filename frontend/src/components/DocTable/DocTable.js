@@ -47,7 +47,7 @@ export default function DocTable() {
         setPage(selected);
     }
     return(
-        <div>{displayedDocs}
+        <div className="docTable">{displayedDocs}
         <ReactPaginate
             previousLabel={"prev"}
             nextLabel={"next"}

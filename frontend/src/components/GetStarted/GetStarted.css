@@ -4,4 +4,5 @@
     flex:1;
     word-wrap: break-word;
     /*visibility: collapse;*/
+    padding:10px;
 }

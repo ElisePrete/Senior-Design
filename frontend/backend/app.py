@@ -84,25 +84,66 @@ def getQuestions():
 @app.route("/api/Documents",methods=["GET"])
 def findDocs():
     input = str(request.args.get('input'))
-    docs = findDocumentHandler(input)
+    docs = findDocumentHandler(pre_process(input))
+    print(docs[0:3])
     return jsonify(docs)
 
-def findDocumentHandler(question):
-    query = pre_process(question)
-    query = {"$search" :"(\"{}\"".format(query)}
-    #docs = list(db.Summaries.find({'$text':{'$search': query }}).limit(8933))  # UNION
-    ans = list(db.Summaries.find({"$text": query}))                         # INTERSECTION
+def findDocumentHandler(input):
+    q = input.split()
+    ans = []
     docs = []
-    for doc in ans:
-        #print("doc:" + doc['answer'])
-        docs.append({
-            '_id':doc['_id'],
-            'summary': doc['summary'],
-            'tags':doc['tags']
-        })
+    listOfRegex = []
+    # METHOD 1 - LOOKS FOR INDIVIDUAL WORDS' INTERSECTION FIRST
+    if len(q) == 0:
+        return ({})
+    for i in range(len(q)):
+        temp = {"tags": { "$regex" : "^{}\s.*".format(q[i]), "$options": 'i' } }  # formats word into regex search that is case insensitive
+        listOfRegex.append(temp)
+
+    docs = list(db.Summaries.find( { "$and": listOfRegex } ) )
+    
+
+    # IF METHOD 1 RETURNS NO DOCS, LOOKS FOR THE WORDS AS A PHRASE 
+    if len(docs) == 0:      
+        if "remanded" in q or "granted" in q or "dismissed" in q or "denied" in q:   # if contains special word
+            decisionName = ""
+            typeDecision = {"remanded": ("remanded" in q), "granted": ("granted" in q), "dismissed": ("dismissed" in q), "denied": ("denied" in q)}
+            for key,val in typeDecision.items():                            # finds position of decision to separate it when searching
+                if val == True:
+                    decisionName = key                                      # decision type 
+            listOfRegex0 = [{"tags": { "$regex" : "{}".format(decisionName), "$options": 'i' } }]  
+            q.remove(decisionName) 
+            qu = " ".join(q)
+            # METHOD 2
+            listOfRegex0.append({"$text": {"$search" :"(\"{}\"".format(qu)}})     # if no matches for this, break up into single words
+            docs = list(db.Summaries.find( { "$and": listOfRegex0 } ) ) 
+            query = listOfRegex0
+
+            if len(docs) == 0:  
+                # METHOD 1
+                listOfRegex2 = [{"tags": { "$regex" : "{}".format(decisionName), "$options": 'i' } }]   # initially add search for decision 
+                for i in range(len(q)):                                                                 # searches other words as a phrase
+                    temp2 = {"tags": { "$regex" : "^{}\s.*".format(q[i]), "$options": 'i' } }
+                    listOfRegex2.append(temp2)
+                docs = list(db.Summaries.find( { "$and": listOfRegex2 } ) )                             # intersection of decision and phrase
+
+                #print("listOfRegex2: ", listOfRegex2)
+
+        else:             
+            # METHOD 1
+            query = input                                 
+            listOfRegex3 = []
+            for word in q:
+                temp3 = {"tags": { "$regex" : "^{}\s.*".format(word), "$options": 'i' } }  
+                listOfRegex3.append(temp3)
+            docs = list(db.Summaries.find( { "$and": listOfRegex } ) )
+            if len(docs) == 0:
+                # METHOD 2
+                query = {"$search" :"(\"{}\"".format(query)}   
+                docs = list(db.Summaries.find({"$text": query}))   
     if (len(docs) < 1):
-        tbquery = TextBlob(query)
-        if (tbquery != query):
+        tbquery = TextBlob(input)
+        if (tbquery != input):
             return findDocumentHandler(tbquery)
     return docs
 

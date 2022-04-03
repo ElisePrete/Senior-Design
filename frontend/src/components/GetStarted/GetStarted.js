@@ -21,9 +21,7 @@ function GetStarted() {
                         <Table bordered hover>
                             <thead>
                             <tr>
-                                <th>#</th>
-                                <th>Question</th>
-                                <th>Answer</th>
+                                <th>Example Questions:</th>
                             </tr>
                             </thead>
                             {objs && objs.map((item,index) => (
