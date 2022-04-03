@@ -22,7 +22,6 @@ const config = {
     DocumentSearch:-1, //-1 = untouched | 0 = false | 1 = true
     howManyQs:0, //either 1 or 4 depending on user satisfaction
     OtherOptions:false //'rephrase' 'yes' 'no' are important in this case
-    //,showDocs:false
   },
   initialMessages: [
     createChatBotMessage(
@@ -37,7 +36,7 @@ const config = {
       mapStateToProps: ["InputQuestion","howManyQs"],
 
     },
-    { /*Function which grabs a question from mongo*/
+    { /*Function which grabs a Docs from mongo*/
       widgetName: "DocSearch",
       widgetFunc: (props) => <DocSearch{...props} /> ,
       mapStateToProps: ["InputQuestion"],
@@ -57,11 +56,7 @@ const config = {
     widgetFunc: (props) => <DocOptions{...props} />,
    // mapStateToProps: ["howManyQs"],
   },
- /*   { //may make 'more results' a different widget so that they appear se[erate in the chatbot. either that or results appear outside the chatbot]
-      widgetName:"MoreResutl",
-      widgetFunc: (props) => <MoreOptions{...props} />,
-      mapStateToProps: ["howManyQs"],
-    },*/
+ 
    /*Example: (don't delete)
     {
       widgetName: "Quiz",

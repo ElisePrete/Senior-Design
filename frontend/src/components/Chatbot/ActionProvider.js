@@ -5,16 +5,9 @@ class ActionProvider {
   constructor(
     createChatBotMessage,
     setStateFunc
-    /*createClientMessage,
-    stateRef
-    createCustomMessage,
-    ...rest*/
   ) {
     this.createChatBotMessage = createChatBotMessage;
     this.setState = setStateFunc;
-    /*this.createClientMessage = createClientMessage;
-     this.stateRef = stateRef;
-    this.createCustomMessage = createCustomMessage;*/
   }
   //adds message to list of chatbot messages. used in all subsequent funcs
   addMessageToState = (message) => {
@@ -53,15 +46,10 @@ class ActionProvider {
   handleDocuments = (question) => {
     this.setState((state) => ({
       ...state,
-     // OtherOptions:true,
       InputQuestion:question
-      //showDocs:true
      }))
     var message = this.createChatBotMessage("Docs found:",{ widget:"DocSearch"})
     this.addMessageToState(message)
-   /* const message = this.createChatBotMessage("docs not supported atm")
-    this.addMessageToState(message) //adds message to ui
-    this.handleInitialOptions() */
     message =  this.createChatBotMessage("Type to search for more documents or..." , { widget:"DocOptions" })
     this.addMessageToState(message)
     
@@ -80,6 +68,7 @@ class ActionProvider {
     this.addMessageToState(message)
   }
 
+  //Prefaces Document Search
   handleDocSetup = () => {
     this.setState((state) => ({
       ...state,
@@ -110,7 +99,6 @@ class ActionProvider {
       howManyQs:num
      })
     )
-   
     message =  this.createChatBotMessage("Have I answered your question?" , { widget:otherWidget })
     this.addMessageToState(message)
   }

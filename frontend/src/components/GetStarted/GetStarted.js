@@ -29,9 +29,7 @@ function GetStarted() {
                             {objs && objs.map((item,index) => (
                                 <tbody key={index}>
                                     <tr>
-                                        <td>{index+1}</td>
                                         <td>{item.question}</td>
-                                        <td>{item.answer}</td>
                                     </tr>
                                     </tbody>
                             ))}

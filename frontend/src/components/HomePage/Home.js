@@ -13,7 +13,6 @@ export default function Home() {
     
 
     var {docs} = useSelector(state => state.data)
-    console.log("show docs is:", docs.length)
     return (
       <div className="App"  >
         <Navbar bg="primary" variant="light" className="justify-content-center">

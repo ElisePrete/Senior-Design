@@ -2,8 +2,7 @@ from flask import Flask, request, jsonify #all needed for json response for reac
 from flask_pymongo import PyMongo,  ObjectId; #to create unique id's for each doc
 from flask_cors import CORS; #allows browser to interact with db
 from query import pre_process
-
-from textblob import TextBlob
+from textblob import TextBlob #does spell check for all inputs if original input heads zero results
 
 #just type ur username and password in the params below so that github doesn't scream at us
 username = "lizz"
@@ -31,28 +30,30 @@ def getQuestion():
     return jsonify(docs)
 
 def getQuestionHandler(question):
-    print(f'q:{question} tb(q):{TextBlob(question).correct()}')
+    #print(f'q:{question} tb(q):{TextBlob(question).correct()}')
     howMany = int(request.args.get('many'))
+    #If API was called with no input
     if not question:
-        print("question is empty")
         return {}
-    print("q:{question},#:{many}")
     '''text search lets u search for n-many entries that are similar to the text
-    you provide in '$search'. i limit it to search for 1 here ^'''
+    you provide in '$search'. i limit it to search for 1 here \/'''
     found = list(db.Questions.find( { '$text': { '$search': question } } ).limit(howMany))
-    '''  found = list(db.Questions.aggregate(
+    '''  
+    I don't remember why I ditched this but I guess it didn't work:
+    found = list(db.Questions.aggregate(
         [{ '$match': {'answer':'...'}}]
     ))'''
     docs = []
     for doc in found:
-    #print("doc:" + doc['answer'])
         docs.append({
             '_id':str(ObjectId(doc['_id'])),
             'question': doc['question'],
             'link':doc['link'],
             'answer':doc['answer']
         })
+    #Check for typos with Textblob if no results arise
     if len(docs) == 0:
+        #I don't do TextBlob immediately because special words like 'ptsd' get autocorrected 
         tbquestion = TextBlob(question).correct()
         if (question != tbquestion):
             return getQuestionHandler(str(tbquestion))
@@ -64,7 +65,7 @@ def getQuestionHandler(question):
         }]
     return docs
 
-
+#Get's Getting Started Q's. May do 10 Static Questions Instead.
 @app.route("/api/Questions",methods=["GET"])
 def getQuestions():
     docs = []
@@ -83,8 +84,11 @@ def getQuestions():
 @app.route("/api/Documents",methods=["GET"])
 def findDocs():
     input = str(request.args.get('input'))
-    #print("at app.py:" + input)
-    query = pre_process(input)
+    docs = findDocumentHandler(input)
+    return jsonify(docs)
+
+def findDocumentHandler(question):
+    query = pre_process(question)
     query = {"$search" :"(\"{}\"".format(query)}
     #docs = list(db.Summaries.find({'$text':{'$search': query }}).limit(8933))  # UNION
     ans = list(db.Summaries.find({"$text": query}))                         # INTERSECTION
@@ -96,14 +100,17 @@ def findDocs():
             'summary': doc['summary'],
             'tags':doc['tags']
         })
-    print(len(docs)) 
-    return jsonify(docs)
+    if (len(docs) < 1):
+        tbquery = TextBlob(query)
+        if (tbquery != query):
+            return findDocumentHandler(tbquery)
+    return docs
+
 
 @app.route("/api/Document",methods=["GET"])
 def getDoc():
     docID = str(request.args.get('input'))
     fulldoc = list(db.Documents.find({"_id" :docID}))[0]  #["fullText"]
-    #print("FULLtEXT:",fulldoc)
     return jsonify(fulldoc)
 
 if __name__ == '__main__':

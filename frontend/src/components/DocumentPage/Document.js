@@ -4,17 +4,13 @@ import { useLocation,useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import React, {useEffect} from 'react'
 import { loadDocument} from '../../model/actions';
-
+/** This is the seperate page where Documents are presented
+ * docID-> doc._id
+ * location = 
+ */
 export default function Document() {
   const { docID } = useParams();
-  //  console.log("ID FROM ROUTE:",id)
-   /* docSum
-    docId
-    docFull*/
-  //  const productData = [ ... ];
- // const { url } = useRouteMatch();
-   // var docID = props.state
-   const location = useLocation()
+  const location = useLocation() 
   const {docSummary} = location.state
     
     //get summary

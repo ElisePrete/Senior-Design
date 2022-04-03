@@ -1,5 +1,8 @@
-/*React UI component of those 'other' or 'doc' buttons which appear at the beginning.
-connects each button to their respective function/widget*/
+/* React Widget (buttons) which appears after a document-independent question was asked.
+   - 'Yes': go back to initial options
+   - 'Rephrase': ask another document-independent question
+   - 'More Results': Results shift from 1 to 4
+   */
 const MoreOptions = (props) => {
     //console.log("m.opt:",props['howManyQs'])
     var optionsM = [
@@ -24,7 +27,6 @@ const MoreOptions = (props) => {
     if (props['howManyQs'] == 4) {
         optionsM = optionsM.slice(0,2)
     }
-
     const buttonsMarkup = optionsM.map((option) => (
         <button key={option.id} onClick={option.handler} className="option-button">
             {option.text}

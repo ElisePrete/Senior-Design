@@ -1,5 +1,5 @@
-/*React UI component of those 'other' or 'doc' buttons which appear at the beginning.
-connects each button to their respective function/widget*/
+/*React Widget (buttons) of those 'other' or 'doc' buttons which appear at the beginning.
+connects each button to their respective function/widget */
 const InitialOptions = (props) => {
     const optionsI = [
         {
@@ -12,16 +12,13 @@ const InitialOptions = (props) => {
             handler:props.actionProvider.handleOtherSetup,
             id:2
         },
-        
     ];
-
     const buttonsMarkup = optionsI.map((option) => (
         <button key={option.id} onClick={option.handler} className="option-button">
             {option.text}
         </button>
 
     ));
-
     return <div className="options-container">{buttonsMarkup}</div>;
 
 }
