@@ -1,0 +1,19 @@
+.getStarted {
+    /*display:flex;
+    float: left;
+    flex:1;
+    word-wrap: break-word;
+   
+    padding:10px;*/
+    ;
+}
+.table {
+    position: absolute;
+    left: 150%;
+    width: 500px;
+    background-color: var(--DF_accent2_dark)
+}
+
+.invisible {
+    visibility: hidden;
+}

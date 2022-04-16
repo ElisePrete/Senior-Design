@@ -1,3 +1,12 @@
+:root {
+  --DF_primary: #000715;
+  --DF_secondary: #c4c4c4;
+  --DF_accent: #875b5b;
+  --DF_accent_dark: #9a4b4b;
+  --DF_accent2: #697595;
+  --DF_accent2_dark: #454c5d;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -7,7 +16,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   min-height: 100% 
 }
-html { height: 100% }
+html { height: 100%; background-color: var(--DF_primary); color: var(--DF_secondary) }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -17,3 +26,7 @@ code {
 .header justify-content-center{
   width:100%;
 }
+div {
+  /*background-color: var(--DF_primary); color: var(--DF_secondary);*/
+}
+

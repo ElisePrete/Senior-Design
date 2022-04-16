@@ -1,0 +1,8 @@
+.welcome {
+  /*  display:flex;
+    flex:1;
+    word-wrap: break-word;
+    visibility: collapse;*/
+    padding:10px;
+    width:530px;
+}

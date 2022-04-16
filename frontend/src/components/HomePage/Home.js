@@ -7,6 +7,7 @@ import DGrid from '../DocGrid/DocGrid';
 import DocTable, {showDocs} from '../DocTable/DocTable';
 import {useState} from 'react';
 import { useSelector } from 'react-redux'
+//import Chatbot from '../ChatbotClone/react-chatbot-kit-master/src/index.ts'
 export default function Home() {
     //class=" bg-light"
     const [show, setShow] = useState(false);
@@ -19,10 +20,11 @@ export default function Home() {
               <h1 style={{ color: "white",flexDirection:"row",flexWrap: "wrap", }}> D.Find </h1>
         </Navbar>
         <MDBContainer style = {{display:'flex'}}>
-          {(docs.length > 0) ? <DocTable/> :  <GetStarted/>}
-          <MDBCol >
+        <MDBCol >
             <CBot/>
           </MDBCol>
+          {(docs.length > 0) ? <DocTable/> :  <GetStarted/>}
+          
         </MDBContainer>
       </div>
     );

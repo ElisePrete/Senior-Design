@@ -1,5 +1,6 @@
 /*React Widget (buttons) of those 'other' or 'doc' buttons which appear at the beginning.
 connects each button to their respective function/widget */
+import './InitialOptions.css'
 const InitialOptions = (props) => {
     const optionsI = [
         {

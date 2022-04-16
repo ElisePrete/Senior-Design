@@ -6,6 +6,7 @@ import MoreOptions from "./MoreOptions/MoreOptions";
 import DocOptions from "./DocOptions/DocOptions";
 import Other from './OtherQandA/Other'
 import DocSearch from './DocSearch/DocSearch'
+import GetStarted from './GetStarted/GetStarted'
 /*
 import Overview from "../components/widgets/Overview/Overview";
 import MessageParser from "../components/widgets/MessageParser/MessageParser";
@@ -24,9 +25,10 @@ const config = {
     OtherOptions:false //'rephrase' 'yes' 'no' are important in this case
   },
   initialMessages: [
+    createChatBotMessage("Welcome To Dfind!", {widget:"GetStarted"}),
     createChatBotMessage(
-      `Welcome to Dfind!`, {
-        widget:"InitialOptions"
+      `Are you interested in searching for documents or asking a general question about disability claims?`, {
+         widget:"InitialOptions",
       }
     )],
   widgets: [ //registering components inside of the chatbot-kit
@@ -56,7 +58,11 @@ const config = {
     widgetFunc: (props) => <DocOptions{...props} />,
    // mapStateToProps: ["howManyQs"],
   },
- 
+  { /*buttons presented after claims results.*/
+  widgetName:"GetStarted",
+  widgetFunc: (props) => <GetStarted{...props} />,
+  mapStateToProps: ["DocumentSearch"],
+},
    /*Example: (don't delete)
     {
       widgetName: "Quiz",

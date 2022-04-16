@@ -4,15 +4,22 @@ import { useDispatch, useSelector } from 'react-redux'
 
 /* React Widget (text) which appears when a user has asked a question independent of docs. 
    Presents # of results within the Chatbot */
-const DocSearch = (params) => {
-    var InputQuestion = params['InputQuestion']
+const DocSearch = (props) => {
+    const [count, setCount] = React.useState(0);
+    //const [next, setNext]  = React.useState(true);
+    console.log("prps ds:", props)
+    var InputQuestion = props['InputQuestion']
     //must call dispatch or else results will stay at zero
     const dispatch = useDispatch();
     var {docs} = useSelector(state => state.data)
+    
     useEffect(() => {
         dispatch(loadDocuments({InputQuestion}));
-    }, []) //.then(response => console.log("response!:",response.length))
-    return ( <> <b>{docs.length} docs found</b> </> )
+        
+        setCount(docs.length) //One update too late
+    }, [])
+    
+    return ( <> <b>{count} docs found</b> </> )
 }
 
 

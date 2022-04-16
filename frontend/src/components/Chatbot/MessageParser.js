@@ -27,8 +27,10 @@ class MessageParser {
           this.actionProvider.handleConfusion()
         }
       }
-      /* User is NOT searching for docs */
-      else if (this.state.DocumentSearch == false){
+      else if (this.state.DocumentSearch == "setup") { //user is searching for documents
+        this.actionProvider.handleDocuments(lowercase)
+      }
+      else {/* user is searching something document-independent*/
         if (this.state.OtherOptions) {
           if (lowercase.includes('yes')) {
             this.actionProvider.handleInitialOptions()
@@ -52,9 +54,7 @@ class MessageParser {
         }
         this.state.DocumentSearch = -1
       }
-      else { //user is searching for documents
-        this.actionProvider.handleDocuments(lowercase)
-      }
+      
 
       
 

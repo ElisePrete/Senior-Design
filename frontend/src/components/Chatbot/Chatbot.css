@@ -5,9 +5,18 @@
 }
 
 .options-container {
-    
+    overflow: visible;
 }
 
 .CBot {
-    float:right;
+    float:left;
+    overflow: visible;
+    width:100%
+}
+.react-chatbot-kit-chat-container {
+    overflow: visible;
+}
+
+.react-chatbot-kit-chat-message-container {
+    overflow: visible;
 }

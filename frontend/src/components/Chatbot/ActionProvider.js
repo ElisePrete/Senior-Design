@@ -7,9 +7,16 @@ class ActionProvider {
     setStateFunc
   ) {
     this.createChatBotMessage = createChatBotMessage;
-    this.setState = setStateFunc;
+    this.setState  = setStateFunc;
+    //this.stateRef = {docs:false};
   }
   //adds message to list of chatbot messages. used in all subsequent funcs
+  /*getStateRefDocs = () => {
+    return //this.stateRef.docs
+  }
+  setStateRefDocs = (bool) => {
+    //this.stateRef.docs = bool
+  }*/
   addMessageToState = (message) => {
     this.setState((prevState) => ({
       ...prevState,
@@ -25,7 +32,6 @@ class ActionProvider {
       handleOther:false,
       DocumentSearch:-1
     }))
-
     this.addMessageToState(this.createChatBotMessage(
       `What would you like to search next?`, {
         widget:"InitialOptions"
@@ -44,14 +50,31 @@ class ActionProvider {
   }
   //function to fetch docs
   handleDocuments = (question) => {
-    this.setState((state) => ({
+     this.setState((state) => ({
       ...state,
-      InputQuestion:question
+      InputQuestion:question,
+      DocumentSearch:true
      }))
+    //this.setStateRefDocs(true)
     var message = this.createChatBotMessage("Docs found:",{ widget:"DocSearch"})
     this.addMessageToState(message)
     message =  this.createChatBotMessage("Type to search for more documents or..." , { widget:"DocOptions" })
     this.addMessageToState(message)
+    
+  }
+  //function to send example quesiton to chatbot
+  handleExampleQ = (question, index) => {
+    //if index is event, it is a document dependent question. otherwise, it is 'other'
+    const tempmessage = "Let me find the answer to '" + String(question) + "'..."
+    const message =  this.createChatBotMessage(tempmessage)
+    this.addMessageToState(message)
+    if (index % 2 == 0) {
+      this.handleDocuments(question)
+    }
+    else {
+      this.handleOther(question,1)
+    }
+    
     
   }
 
@@ -73,8 +96,8 @@ class ActionProvider {
     this.setState((state) => ({
       ...state,
       InputQuestion: "",
-      DocumentSearch:true,
       OtherOptions:false,
+      DocumentSearch:"setup",
       howManyQs:0
     }))
     const message = this.createChatBotMessage("What are you searching for?:")

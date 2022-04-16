@@ -4,8 +4,8 @@ from nltk.corpus import stopwords
 stop_words = stopwords.words("english")
 
 dFind_stop_words = ["find", "help","me","my", "mine", "want", "docs", "documents", "document", "related", "issue",
-"issues", "problem", "problems", "cases","cases", "how", "make", "claim", "claims", "benefits", "appointment", "rule", "ruling", "ruled", 
-"favor", "court", "courts", "appeal", "regarding", "regards", "regard", "benefits"] 
+"issues", "problem", "problems", "cases","cases", "about" "how", "make", "claim", "claims", "benefits", "appointment", "rule", "ruling", "ruled", 
+"favor", "court", "concerning","courts", "appeal", "regarding", "regards", "regard", "benefits"] 
 
 def pre_process(Query):                    # makes string lowercase, removes stop words
     Query = Query.lower()
