@@ -18,7 +18,7 @@ function Doc({doc}) {
          return(
              <div onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)}>
                 <Link to={`document/${doc._id}`} state={{docSummary:doc.summary}}>
-                    <p className="title" >{doc._id}</p>
+                    <p className="docTitle" >{doc._id}</p>
                 </Link>
                 <p className="tags"> {!isHover ? <>{doc.tags.slice(0,10).toString(", ")}</>:<> {doc.summary.slice(0,290)}</>}...</p>
             </div>
@@ -47,12 +47,14 @@ export default function DocTable() {
         setPage(selected);
     }
     return(
-        <div className="docTable">{displayedDocs}
+        <div className="docTable">
+            <div className="title">Documents Found</div>
+            {displayedDocs}
         <ReactPaginate
             previousLabel={"prev"}
             nextLabel={"next"}
             breakLabel={"..."}
-            breakClassName={"break-me"}
+            breakClassName={"break"}
             pageCount={totalPages}
             marginPagesDisplayed={2}
             pageRangeDisplayed={5}

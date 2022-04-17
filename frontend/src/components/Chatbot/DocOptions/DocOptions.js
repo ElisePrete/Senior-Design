@@ -3,7 +3,7 @@ Users can search for more docs or switch to document-independent questions*/
 const DocOptions = (props) => {
     var optionsM = [
         {
-            text:"Ask Something else",
+            text:"I would like to ask something else",
             handler:props.actionProvider.handleOtherSetup,
             id:1
         }

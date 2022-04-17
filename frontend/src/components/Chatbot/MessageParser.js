@@ -27,7 +27,7 @@ class MessageParser {
           this.actionProvider.handleConfusion()
         }
       }
-      else if (this.state.DocumentSearch == "setup") { //user is searching for documents
+      else if (this.state.DocumentSearch == "setup" || this.state.DocumentSearch == true) { //user is searching for documents
         this.actionProvider.handleDocuments(lowercase)
       }
       else {/* user is searching something document-independent*/

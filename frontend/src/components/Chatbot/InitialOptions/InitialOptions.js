@@ -4,12 +4,12 @@ import './InitialOptions.css'
 const InitialOptions = (props) => {
     const optionsI = [
         {
-            text:"Find Documents",
+            text:"I would like to search for a disability claim decision document.",
             handler:props.actionProvider.handleDocSetup,
             id:1
         },
         {
-            text:"Other",
+            text:"I would like to ask a general question about disability claims.",
             handler:props.actionProvider.handleOtherSetup,
             id:2
         },

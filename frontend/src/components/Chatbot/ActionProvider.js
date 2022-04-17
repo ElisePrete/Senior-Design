@@ -118,7 +118,7 @@ class ActionProvider {
     this.setState((state) => ({
       ...state,
       OtherOptions:true,
-      InputQuestion:state.InputQuestion +" " + question,
+      InputQuestion:question,
       howManyQs:num
      })
     )

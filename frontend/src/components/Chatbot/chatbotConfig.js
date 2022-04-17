@@ -27,7 +27,7 @@ const config = {
   initialMessages: [
     createChatBotMessage("Welcome To Dfind!", {widget:"GetStarted"}),
     createChatBotMessage(
-      `Are you interested in searching for documents or asking a general question about disability claims?`, {
+      `How can I help you today?`, {
          widget:"InitialOptions",
       }
     )],

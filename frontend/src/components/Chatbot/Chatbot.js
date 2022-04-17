@@ -52,6 +52,7 @@ function CBot() {
   return (
     <div  className="CBot">
      {true && (<Chatbot
+     headerText=' '
        config={config}
        actionProvider={ActionProvider}
        //messageHistory={loadMessages()}
@@ -59,11 +60,10 @@ function CBot() {
        //saveMessages={saveMessages}  //<button onClick={() => toggleBot((prev) => !prev)}>Bot</button>
        //runInitialMessagesWithHistory={true}
       />)}
-       <button onClick={() => toggleBot((prev) => !prev)}>Bot</button>
+      
     </div>
   );
 }
-
 
 
 export default CBot;

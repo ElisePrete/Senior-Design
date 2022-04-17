@@ -19,7 +19,7 @@ const DocSearch = (props) => {
         setCount(docs.length) //One update too late
     }, [])
     
-    return ( <> <b>{count} docs found</b> </> )
+    return ( <> <b className='results'>{count} docs found</b> </> )
 }
 
 

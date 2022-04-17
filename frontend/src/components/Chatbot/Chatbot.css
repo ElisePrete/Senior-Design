@@ -6,17 +6,133 @@
 
 .options-container {
     overflow: visible;
+    background-color:var(--DF_accent2_dark) !important;
 }
 
 .CBot {
     float:left;
     overflow: visible;
-    width:100%
+    width:100%;
+    height: var(--tableHeight);
+    padding:10px;
 }
 .react-chatbot-kit-chat-container {
-    overflow: visible;
+    overflow-y: visible;
+    display: inline-block;
 }
 
 .react-chatbot-kit-chat-message-container {
-    overflow: visible;
+    overflow-y: scroll !important;
+    overflow-x: hidden !important;
+    background-color: var(--DF_accent2_dark);
+    border: solid 2px var(--DF_accent2);
+    height:90% !important;
+}
+
+
+.react-chatbot-kit-chat-inner-container {
+}
+
+.react-chatbot-kit-chat-header {
+    background-color:var(--DF_secondary) !important;
+    color:var(--DF_primary) !important;
+    max-height: min-content;
+
+}
+
+.react-chatbot-kit-chat-input-container {
+}
+
+.react-chatbot-kit-chat-input {
+}
+
+.react-chatbot-kit-chat-input-form {
+}
+
+.react-chatbot-kit-chat-input::placeholder {
+}
+
+.react-chatbot-kit-chat-btn-send {
+    background-color: var(--DF_accent) !important;
+}
+
+.react-chatbot-kit-chat-btn-send-icon {
+}
+
+.react-chatbot-kit-chat-bot-message-container  {
+    background-color: var(--DF_accent2_dark) !important;
+    
+}
+.react-chatbot-kit-user-chat-message-container{
+    background-color: var(--DF_accent2_dark) !important;
+}
+
+.react-chatbot-kit-chat-bot-avatar-container {
+
+} 
+
+.react-chatbot-kit-chat-bot-avatar {
+    background-color: var(--DF_accent2_dark) !important;
+}
+
+.react-chatbot-kit-user-avatar {
+    background-color: var(--DF_accent2_dark) !important;
+}
+
+.react-chatbot-kit-chat-bot-message {
+    box-shadow: var(--intense_shadow) !important;
+    background-color: var(--DF_primary) !important;
+}
+
+.react-chatbot-kit-chat-bot-message-arrow {
+    background-color: var(--DF_accent2_dark) !important;
+    border-right: var(--DF_accent) 8px solid !important ;
+}
+
+.react-chatbot-kit-user-chat-message-arrow {
+    background-color: var(--DF_accent2_dark) !important;
+    border-left: var(--DF_accent_dark) 8px solid !important ;
+}
+
+.react-chatbot-kit-chat-bot-loading-icon-container {
+}
+
+.chatbot-loader-container {
+}
+
+#chatbot-loader #chatbot-loader-dot1 {
+}
+
+#chatbot-loader #chatbot-loader-dot2 {
+}
+
+#chatbot-loader #chatbot-loader-dot3 {
+}
+
+.react-chatbot-kit-error {
+}
+
+.react-chatbot-kit-error-container {
+}
+
+.react-chatbot-kit-error-header {
+}
+
+.react-chatbot-kit-error-docs {
+}
+
+div {
+  /*  background-color: var(--DF_accent2_dark) !important;
+*/}
+
+.option-button {
+    margin:5px;
+}
+
+.option-button:visited {
+    background-color:red;
+}
+
+.results {
+    text-shadow: 2px 2px var(--DF_accent2_dark) ;
 }

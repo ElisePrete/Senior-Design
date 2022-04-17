@@ -1,7 +1,17 @@
 .Home {
-    height:100vh;
+  /*  height:100vh;*/
+  display:flex;
+  border-top: var(--DF_border1);
+  padding-bottom:20px;
   }
-  
-  .App {
-    padding:10px;
-  }
+
+.header {
+  color:var(--DF_primary)
+}
+
+.logo {
+  padding:10px;
+  float:right;
+  width:16%;
+}
+

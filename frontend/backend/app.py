@@ -38,6 +38,8 @@ def getQuestionHandler(question):
     '''text search lets u search for n-many entries that are similar to the text
     you provide in '$search'. i limit it to search for 1 here \/'''
     found = list(db.Questions.find( { '$text': { '$search': question } } ).limit(howMany))
+    print(question)
+    print(found)
     '''  
     I don't remember why I ditched this but I guess it didn't work:
     found = list(db.Questions.aggregate(
@@ -65,7 +67,7 @@ def getQuestionHandler(question):
         }]
     return docs
 
-#Get's Getting Started Q's. May do 10 Static Questions Instead.
+#Get's Getting Started Q's. CURRENTLY UNUSED I do 10 Static Questions Instead.
 @app.route("/api/Questions",methods=["GET"])
 def getQuestions():
     docs = []

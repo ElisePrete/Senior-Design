@@ -3,11 +3,15 @@ import React, {useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { loadQuestion,loadQuestions } from '../../../model/actions';
 import {Table, Container, Row, Col} from "react-bootstrap"
+/*///Everything below is to make it draggable? Might do that -> https://www.npmjs.com/package/react-draggable
+// ES6
+import Draggable from 'react-draggable'; // The default
+import {DraggableCore} from 'react-draggable'; // <DraggableCore>
+import Draggable, {DraggableCore} from 'react-draggable'; // Both at the same time
 
-/**Eventually‚ this will be the getting started box.
- * Currently‚ it just presents 10 q's from the db.
- * this lets us know that the db is up and running.
- */
+// CommonJS
+let Draggable = require('react-draggable');
+let DraggableCore = Draggable.DraggableCore;*/
 
  const objs = ["Cases concerning the respiratory system.",
  "What is the easiest way to file a claim?",
@@ -40,13 +44,13 @@ const GetStarted = (props) => {
                         <Table bordered hover>
                             <thead>
                             <tr>
-                                <th>Example Questions:</th>
+                                <th className='title'>Example Questions:</th>
                             </tr>
                             </thead>
                             {objs.map((item,index) => (
                                 <tbody >
                                     <tr>
-                                        <td><button onClick={() => props.actionProvider.handleExampleQ(item,index)}>{item}</button></td>
+                                        <td><button className="gsButton" onClick={() => props.actionProvider.handleExampleQ(item,index)}>{item}</button></td>
                                     </tr>
                                     </tbody>
                             ))}

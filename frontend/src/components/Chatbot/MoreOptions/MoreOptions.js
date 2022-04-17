@@ -7,17 +7,17 @@ const MoreOptions = (props) => {
     //console.log("m.opt:",props['howManyQs'])
     var optionsM = [
         {
-            text:"Yes",
+            text:"Yes, I would like to ask something else.",
             handler:props.actionProvider.handleInitialOptions,
             id:1
         },
         {
-            text:"No, Rephrase question.",
+            text:"No, I would like to rephrase my question.",
             handler:props.actionProvider.handleOtherSetup,
             id:2
         },
         {
-            text:"No, See More Results",
+            text:"No, I would like to see More Results",
             handler:props.actionProvider.handleOther,
             id:3
         }

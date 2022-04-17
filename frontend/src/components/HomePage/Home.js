@@ -7,19 +7,22 @@ import DGrid from '../DocGrid/DocGrid';
 import DocTable, {showDocs} from '../DocTable/DocTable';
 import {useState} from 'react';
 import { useSelector } from 'react-redux'
+import "./Home.css"
+import logo from "./logo.png"
 //import Chatbot from '../ChatbotClone/react-chatbot-kit-master/src/index.ts'
 export default function Home() {
-    //class=" bg-light"
-    const [show, setShow] = useState(false);
-    
 
     var {docs} = useSelector(state => state.data)
-    return (
-      <div className="App"  >
-        <Navbar bg="primary" variant="light" className="justify-content-center">
+    /*
+<Navbar bg="primary" variant="light" className="justify-content-center">
               <h1 style={{ color: "white",flexDirection:"row",flexWrap: "wrap", }}> D.Find </h1>
         </Navbar>
-        <MDBContainer style = {{display:'flex'}}>
+    */
+    return (
+      <div className="App">
+        <img src={logo} alt="ScottySwap lives on!" className='logo'></img>
+
+        <MDBContainer  className="Home">
         <MDBCol >
             <CBot/>
           </MDBCol>

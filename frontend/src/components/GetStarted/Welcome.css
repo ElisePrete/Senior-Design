@@ -4,5 +4,7 @@
     word-wrap: break-word;
     visibility: collapse;*/
     padding:10px;
-    width:530px;
+   /* width:530px;
+    left: 150%;
+    position:inherit;*/
 }

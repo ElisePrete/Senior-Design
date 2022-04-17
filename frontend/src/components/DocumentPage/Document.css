@@ -1,5 +1,6 @@
 .DocPage {
-    min-height: 100vh; 
+    max-height:100vh !important;
+    overflow:auto;
 }
 
 .DocSummary {
@@ -15,10 +16,9 @@
 
 .Both {
     overflow-y: scroll;
-    scrollbar-color: white #359;
-    scrollbar-width: thin;
+    
     border:black solid 1px;
     margin:5px;
-    max-height:100vh;
+    max-height:90vh;
 }
 
