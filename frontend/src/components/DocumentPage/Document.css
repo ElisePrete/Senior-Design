@@ -17,7 +17,7 @@
 .Both {
     overflow-y: scroll;
     
-    border:black solid 1px;
+    border: var(--DF_border1);
     margin:5px;
     max-height:90vh;
 }

@@ -18,7 +18,7 @@ function GetStarted() {
     */
     return (
         <div className='welcome'>
-            Welcome to D.Find. A premier tool for discovering relevant claims files and their summaries, in addition to answering typical questions concerning the disability claims process. To begin, click or type responses to our Chatbot, or select an example question below.
+            Welcome to <b>D.Find</b>: a premier tool for discovering relevant claims files and their summaries, in addition to answering typical questions concerning the disability claims process. To begin, click or type responses to our Chatbot, or select an example question below.
 
         </div>
        /*/Some example questions include- <i>How do I file a disability claim online?</i>, <i>What does 'Remanded' mean?</i>, and <i>Where can I find a lawyer?</i>
