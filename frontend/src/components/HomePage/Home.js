@@ -21,7 +21,7 @@ export default function Home() {
     return (
       <div className="App">
         <img src={logo} alt="ScottySwap lives on!" className='logo'></img>
-
+        <div className='header'></div>
         <MDBContainer  className="Home">
         <MDBCol >
             <CBot/>

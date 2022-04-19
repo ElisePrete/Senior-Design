@@ -18,6 +18,12 @@
 
 }
 
+@font-face {
+  font-family: Roboto;
+  src: local("media"),
+       url(./media/Roboto-Regular.ttf);
+}
+
 body {
   scrollbar-color: var(--DF_accent2_dark) var(--DF_accent2);
     scrollbar-width: thin;
@@ -35,10 +41,9 @@ code {
     monospace;
 }
 
-.header justify-content-center{
-  width:100%;
-}
 div {
+  font-family: Roboto;
+  font-size:medium;
    color: var(--DF_secondary);
 }
 
