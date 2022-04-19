@@ -54,7 +54,7 @@ i tend to get errors and run this instead:
 ### How to deploy code changes:
 1. get the key from lizz‚ download it (there's a seperate key for the db server and the web-hosting server)
 
-2. in the folder where thefrom your local machine ssh into aws ubuntu server:
+2. in the folder where the key is located, ssh into aws ubuntu server:
 
 ssh -i <deploy-key-file>.pem ubuntu@18.205.252.35
 
