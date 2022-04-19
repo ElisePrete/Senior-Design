@@ -54,15 +54,16 @@ i tend to get errors and run this instead:
 ### How to deploy code changes:
 1. get the key from lizz‚ download it (there's a seperate key for the db server and the web-hosting server)
 
-2. in the folder where the key is located, ssh into aws ubuntu server:
+2. run <code>sudo npm run build </code> INSIDE LOCAL MACHINE (Senior-Design/frontend). DON'T DO IT IN THE REMOTE SERVER AWS WILL REBEL
+
+3. in the folder where the key is located, ssh into aws ubuntu server:
 
 ssh -i <deploy-key-file>.pem ubuntu@18.205.252.35
 
-3. inside of the remote server‚ Senior-Design is the same git branch‚ so get local changes via git pull or code directly within there. 
+4. inside of the remote server‚ Senior-Design is the same git branch‚ so get local changes via git pull or code directly within there. 
 
 Then in Senior-Design/frontend run:
 
-- sudo npm run build
 - sudo systemctl restart dfind
 
 check http://18.205.252.35
