@@ -22,3 +22,11 @@
     max-height:90vh;
 }
 
+@media  (max-width: 768px) {
+    /* For mobile phones: */
+    .Both {
+        overflow-x:hidden;
+        min-width:50vh;
+        max-height:60vh;
+    }
+  }

@@ -16,3 +16,9 @@
   width:16%;
 }
 
+@media  (max-width: 768px) {
+  /* For mobile phones: */
+  .logo {
+    width:50%;
+  }
+}

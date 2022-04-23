@@ -73,6 +73,7 @@
 
 .react-chatbot-kit-chat-bot-avatar {
     background-color: var(--DF_accent2_dark) !important;
+    width:auto;
 }
 
 .react-chatbot-kit-user-avatar {

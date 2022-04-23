@@ -34,7 +34,9 @@ class ActionProvider {
     }))
     this.addMessageToState(this.createChatBotMessage(
       `What would you like to search next?`, {
-        widget:"InitialOptions"
+        widget:"InitialOptions",
+        delay:1000,
+        loading:true
       }
     ))
   }
@@ -45,7 +47,9 @@ class ActionProvider {
   }
   
   handleConfusion = () => {
-    const message = this.createChatBotMessage("Sorry, i did not catch that. Could you rephrase?")
+    const message = this.createChatBotMessage("Sorry, i did not catch that. Could you rephrase?", 
+    {widget:"InitialOptions"})
+    
     this.addMessageToState(message) //adds message to ui
   }
   //function to fetch docs

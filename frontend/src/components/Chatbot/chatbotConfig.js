@@ -25,10 +25,11 @@ const config = {
     OtherOptions:false //'rephrase' 'yes' 'no' are important in this case
   },
   initialMessages: [
-    createChatBotMessage("Welcome To Dfind!", {widget:"GetStarted"}),
+    createChatBotMessage("Welcome To Dfind! My name is Betty.", {widget:"GetStarted"}),
     createChatBotMessage(
       `How can I help you today?`, {
          widget:"InitialOptions",
+         delay:500
       }
     )],
   widgets: [ //registering components inside of the chatbot-kit

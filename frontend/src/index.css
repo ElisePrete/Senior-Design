@@ -47,3 +47,20 @@ div {
    color: var(--DF_secondary);
 }
 
+
+@media  (max-width: 768px) {
+  /* For mobile phones: */
+  div {
+    width:100%;
+  }
+  .logo {
+    width:50%;
+  }
+  .welcome {
+    float:none;
+  }
+  .Home {
+    overflow-x: hidden;
+  }
+
+}

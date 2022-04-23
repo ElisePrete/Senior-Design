@@ -17,6 +17,7 @@
   text-align:center;
   width:100%;
   color:var(--DF_accent2_dark) !important;
+  background-color: var(--DF_primary);
 }
 
 .pagination > .active > a{
@@ -71,4 +72,13 @@
 
   a {
     color: var(--DF_accent2)
+  }
+  @media  (max-width: 768px) {
+    .docTable {
+      min-height:100px;
+    }
+    .pagination {
+      margin:30px auto 0px auto;
+      padding-top:5px;
+    }
   }
