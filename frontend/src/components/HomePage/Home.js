@@ -19,13 +19,14 @@ export default function Home() {
               <h1 style={{ color: "white",flexDirection:"row",flexWrap: "wrap", }}> D.Find </h1>
         </Navbar>
     */
+   console.log("is phone?:", isPhone)
     return (
       <div className="App">
         <img src={logo} alt="ScottySwap lives on!" className='logo'></img>
         <div className='header'></div>
         
         {isPhone &&<GetStarted/>}
-        <MDBContainer  className="Home d-flex flex-column mb-3">
+        <MDBContainer  className="Home d-flex  mb-3">
           <MDBCol >
             <CBot/>
           </MDBCol>

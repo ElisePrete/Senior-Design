@@ -7,7 +7,7 @@ import { useMediaQuery } from 'react-responsive';
 export var isPhone = false
 
 function App() {
-  isPhone = useMediaQuery({ query: '(max-width: 1224px)' })
+  isPhone = useMediaQuery({ query: '(max-width: 786px)' })
   //class=" bg-light"
   return (
     <Router >

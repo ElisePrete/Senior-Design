@@ -32,12 +32,13 @@ def getQuestion():
 def getQuestionHandler(question):
     #print(f'q:{question} tb(q):{TextBlob(question).correct()}')
     howMany = int(request.args.get('many'))
+    print("hm:",howMany)
     #If API was called with no input
     if not question:
         return {}
     '''text search lets u search for n-many entries that are similar to the text
     you provide in '$search'. i limit it to search for 1 here \/'''
-    found = list(db.Questions.find( { '$text': { '$search': question } } ).limit(howMany))
+    found = list(db.Questions.find( { '$text': { '$search': question } } ).limit(4))
     print(question)
     print(found)
     '''  

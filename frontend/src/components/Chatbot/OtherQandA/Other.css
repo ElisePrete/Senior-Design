@@ -1,9 +1,17 @@
 .qNa chatbot-bubble {
-    border:1px black;
     /*css for l8r*/
-    
+    color:white !important;
+    width:90%;
+    padding-bottom:3px;
+    padding:3px;
+  
 }
-
+.question {
+    color: white;
+padding: 6px;
+}
 .link {
     margin-bottom: 5px;
+    background-color: var(--DF_accent2);
+    
 }

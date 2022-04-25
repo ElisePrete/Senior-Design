@@ -19,6 +19,10 @@
 @media  (max-width: 768px) {
   /* For mobile phones: */
   .logo {
-    width:50%;
+    width:30vh;
   }
+  .Home {
+    display:block !important;
+  }
+  
 }

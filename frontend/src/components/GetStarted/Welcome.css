@@ -8,8 +8,11 @@
     left: 150%;
     position:inherit;*/
     font-size: smaller;
-    border-top: var(--DF_border1)
+    
 }
 @media  (max-width: 768px) {
   /* For mobile phones: */
+  .welcome {
+    border-top: var(--DF_border1)
+  }
 }
