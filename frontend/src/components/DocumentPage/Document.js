@@ -9,27 +9,30 @@ import { MDBContainer, MDBRow, MDBCol } from "mdb-react-ui-kit";
  * docID-> doc._id
  * location = 
  */
+ import {isPhone} from "../../App"
+ 
 export default function Document() {
   const { docID } = useParams();
   const location = useLocation() 
   const {docSummary} = location.state
-    
-    //get summary
-    //get full doc
-    var docFull = ""
-    const dispatch = useDispatch();
-    var {doc} = useSelector(state => state.data)
-    useEffect(() => {
-        dispatch(loadDocument({docID}));
-        /*if (doc) {
-          console.log("DOC in Document.js:",doc['fullText'])
-        }*/
-        
-  
+  var phoneClass = "DocPage"
+  if (isPhone) {phoneClass =  " d-flex flex-column mb-3"}
+  //get summary
+  //get full doc
+  var docFull = ""
+  const dispatch = useDispatch();
+  var {doc} = useSelector(state => state.data)
+  useEffect(() => {
+      dispatch(loadDocument({docID}));
+      /*if (doc) {
+        console.log("DOC in Document.js:",doc['fullText'])
+      }*/
+      
+
     }, [docFull]) //.then(response => console.log("response!:",response))
     docFull = doc['fullText']
     return ( 
-      <MDBContainer className="DocPage  d-flex flex-column mb-3" >
+      <MDBContainer className={"DocPage " + phoneClass} >
       <h1>{docID}</h1>
 
         <MDBCol className="DocSummary Both">{docSummary}

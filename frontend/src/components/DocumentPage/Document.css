@@ -26,7 +26,7 @@
     /* For mobile phones: */
     .Both {
         overflow-x:hidden;
-        min-width:50vh;
+     /*   min-50vwidth:50vh;*/
         max-height:60vh;
     }
   }

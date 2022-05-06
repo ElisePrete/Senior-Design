@@ -36,6 +36,7 @@ const NoReRender = (arr,toFrom) => {
     console.log("nrr:", toFrom)
     return (<>{arr && Object.keys(arr).slice(toFrom[0], toFrom[1]).map((item,i) => (
         <tbody key={i} className="link">
+            
             <a className='qNa' href={arr[item].link}><b className='question'> {arr[item].question}</b></a><br/>
         </tbody>
     ))} </>)

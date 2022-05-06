@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify #all needed for json response for react apps
 from flask_pymongo import PyMongo,  ObjectId; #to create unique id's for each doc
 from flask_cors import CORS; #allows browser to interact with db
-from query import pre_process
+from query import pre_process, pre_process_q
 from textblob import TextBlob #does spell check for all inputs if original input heads zero results
 
 #just type ur username and password in the params below so that github doesn't scream at us
@@ -26,8 +26,55 @@ def index():
 @app.route("/api/Question",methods=["GET"])
 def getQuestion():
     question = str(request.args.get('input'))
-    docs = getQuestionHandler(question)
+    howMany = int(request.args.get('many'))
+    print("hm:",howMany)
+    docs = getQuestionHandlerElise(pre_process_q(question),howMany)
     return jsonify(docs)
+
+def getQuestionHandlerElise(query,howMany):
+    q = query.split()
+    ans = []
+    #listOfRegex = []
+    if len(q) != 0:
+        tempL = []
+        docs = []
+        for i in range(len(q)):         # get docs that have individual word in question
+            tmp = list( db.Questions.find( {"question": { "$regex" : "{}\s.*".format(q[i]), "$options": 'i' } } ).limit(4) )
+            for i in range(len(tmp)):
+                #tempL.append(tmp[i].get('answer')) 
+                tempL.append(tmp[i])
+        for elm in tempL:               # try to get intersection of docs that contain individual words
+            #print(tempL.count(elm), " ", elm)
+            if tempL.count(elm) >= len(q)-1 and (elm not in docs): # eual to len bc has to have all words in query
+                docs.append(elm)
+        print(docs)
+    else:
+        docs = []
+
+    if len(docs) == 0 and len(query) != 0:                                   
+        #query = {"$search" :"(\"{}\"".format(query)}    
+        docs = list(db.Questions.find({'$text':{'$search': query }}).limit(4))   # only finding docs with one of query words
+  
+    if len(docs) == 0:     
+        docs.append({
+            '_id':"N/A",
+            'question': "",
+            'link':'18.205.252.35',
+            'answer':"Question Not found, please rephrase"
+        })
+    else:
+        for doc in docs:
+            ans.append({
+            '_id':str(ObjectId(doc['_id'])),
+            'question': doc['question'],
+            'link':doc['link'],
+            'answer':doc['answer']
+        })
+
+    print("question: ", query)
+    print("docs len: ", len(docs))
+    return ans
+
 
 def getQuestionHandler(question):
     #print(f'q:{question} tb(q):{TextBlob(question).correct()}')
@@ -41,11 +88,6 @@ def getQuestionHandler(question):
     found = list(db.Questions.find( { '$text': { '$search': question } } ).limit(4))
     print(question)
     print(found)
-    '''  
-    I don't remember why I ditched this but I guess it didn't work:
-    found = list(db.Questions.aggregate(
-        [{ '$match': {'answer':'...'}}]
-    ))'''
     docs = []
     for doc in found:
         docs.append({

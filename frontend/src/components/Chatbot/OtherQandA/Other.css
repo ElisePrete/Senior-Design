@@ -7,11 +7,16 @@
   
 }
 .question {
-    color: white;
+    color: var(--DF_secondary);
 padding: 6px;
 }
 .link {
     margin-bottom: 5px;
     background-color: var(--DF_accent2);
+    padding: 3px;
+display: inline-block;
+border-radius: 3px;
+font-size: small;
+border: var(--DF_secondary) 1px solid;
     
 }
