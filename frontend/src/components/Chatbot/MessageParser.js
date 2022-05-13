@@ -26,7 +26,7 @@ class MessageParser {
         else {
           this.state.howManyQs =0
           this.state.DocumentSearch = 0
-          this.actionProvider.handleOtherSetup() 
+          this.actionProvider.handleOther(lowercase,1);
         }
       }
       else if (this.state.DocumentSearch == "setup" || this.state.DocumentSearch == true) { //user is searching for documents
