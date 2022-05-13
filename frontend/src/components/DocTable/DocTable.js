@@ -50,6 +50,7 @@ export default function DocTable() {
         <div className="docTable">
             <div className="title">Documents Found</div>
             {displayedDocs}
+            <div className="bottom"></div>
         <ReactPaginate  
             previousLabel={"prev"}
             nextLabel={"next"}

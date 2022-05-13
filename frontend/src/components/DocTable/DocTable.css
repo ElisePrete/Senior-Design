@@ -34,6 +34,10 @@
   
 }
 
+.bottom {
+  height:20px;
+  width:100%
+}
 
 .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus{
   border: var(--DF_accent_dark) 2px solid;

@@ -26,10 +26,14 @@ const hello = (item) => { //test function. ignore
 }
 
 const GetStarted = (props) => {
-    const active = props.DocumentSearch;
-    console.log("is it true!?:", active)
-
+    var active = props.DocumentSearch;
     
+    const dispatch = useDispatch();
+    var {docs} = useSelector(state => state.data)
+    if (docs.length > 0) {
+        active = true
+    }
+    console.log("is it true!?:", active)
     /*const dispatch = useDispatch();
     //var objs;
     useEffect(() => {

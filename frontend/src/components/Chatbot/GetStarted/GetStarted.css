@@ -7,6 +7,7 @@
     padding:10px;*/
     z-index: 5;
 position: absolute;
+margin: 15px 0px auto !important;
 }
 .table {
     position: absolute;
