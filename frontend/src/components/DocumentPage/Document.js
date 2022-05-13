@@ -15,7 +15,8 @@ export default function Document() {
   const { docID } = useParams();
   const location = useLocation() 
   const {docSummary} = location.state
-  var phoneClass = "DocPage"
+  var phoneClass = ""
+  //console.log('isphone:', isPhone)
   if (isPhone) {phoneClass =  " d-flex flex-column mb-3"}
   //get summary
   //get full doc

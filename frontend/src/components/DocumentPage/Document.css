@@ -1,6 +1,6 @@
 .DocPage {
     max-height:100vh !important;
-    overflow:auto;
+    overflow-y:hidden;
 }
 
 .DocSummary {
@@ -9,22 +9,25 @@
     
 }
 .FullText {
-    width:55%;
+    width:50%;
     float:left;
     white-space: pre-wrap;
+    
 }
 
 .Both {
-    overflow-y: scroll;
-    
+    overflow-y:scroll;
     border: var(--DF_border1);
     margin:5px;
     max-height:90vh;
+    padding:10px;
 }
 
 @media  (max-width: 768px) {
     /* For mobile phones: */
     .Both {
+
+    overflow-y: scroll;
         overflow-x:hidden;
      /*   min-50vwidth:50vh;*/
         max-height:60vh;

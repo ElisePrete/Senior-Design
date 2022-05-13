@@ -24,7 +24,9 @@ class MessageParser {
           this.actionProvider.handleDocSetup() 
         }
         else {
-          this.actionProvider.handleConfusion()
+          this.state.howManyQs =0
+          this.state.DocumentSearch = 0
+          this.actionProvider.handleOtherSetup() 
         }
       }
       else if (this.state.DocumentSearch == "setup" || this.state.DocumentSearch == true) { //user is searching for documents

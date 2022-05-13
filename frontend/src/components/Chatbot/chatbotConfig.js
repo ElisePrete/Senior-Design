@@ -27,7 +27,7 @@ const config = {
   initialMessages: [
     createChatBotMessage("Welcome To Dfind! My name is Betty.", {widget:"GetStarted"}),
     createChatBotMessage(
-      `How can I help you today?`, {
+      `How can I help you today? Pick an option below:`, {
          widget:"InitialOptions",
          delay:500
       }
